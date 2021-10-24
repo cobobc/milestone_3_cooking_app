@@ -25,6 +25,11 @@ def recipes():
     return render_template("recipes.html")
 
 
+@app.route("/login")
+def login():
+    return render_template("login.html")
+
+
 if __name__ == "__main__":
     app.run(
         host=os.environ.get("IP", "0.0.0.0"),
