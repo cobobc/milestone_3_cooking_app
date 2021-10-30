@@ -1,17 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Recipe List</title>
-</head>
-<body>
-    {% for recipes in recipes %}
-        {{ recipes.recipe_type }}<br>
-        {{ recipes.recipe_name }}<br>
-        {{ recipes.ingredients }}<br>
-        {{ recipes.cooking_time }}<br>
-    {% endfor %}
-</body>
-</html>
+{% extends "base.html" %}
+{% block page %}
+    <h2>This is where the recipes will go...</h2>
+
+        {% for recipes in recipes %}
+            {{ recipes.recipe_type }}<br>
+            {{ recipes.recipe_name }}<br>
+            {{ recipes.ingredients }}<br>
+            {{ recipes.cooking_time }}<br>
+        {% endfor %}
+
+{% endblock %}
