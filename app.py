@@ -43,6 +43,11 @@ def login():
     return render_template("login.html", page_heading="Sign up or Login")
 
 
+@app.route("/register", methods=["GET", "POST"])
+def register():
+    return render_template("register.html")
+
+
 @app.route("/get_recipes")
 def get_recipes():
     recipes = mongo.db.recipes.find()
