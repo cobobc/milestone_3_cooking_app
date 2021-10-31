@@ -1,17 +1,41 @@
 {% extends "base.html" %}
 {% block page %}
-    <h2>The registration page is here...</h2>
 
-    <div class="row">
-        <form class="col">
-            <div class="col">
-                <input type="text" class="form-control" placeholder="First name" aria-label="First name">
+    <h2 class="center-align">Register</h2>
+
+      <div class="row">
+          <form class="col" method="POST" action="{{ url_for('register') }}">
+              <div class="card">
+                  <div class="card-body">
+
+                        <!-- email -->
+
+                        <div class="row">
+                            <div class="form-floating mb-3">
+                                <input type="email" name="" class="form-control" id="floatingInput" placeholder="name@example.com">
+                                <label for="floatingInput">Email address</label>
+                            </div>
+                        </div>
+
+                        <!-- password -->
+
+                        <div class="row">
+                            <div class="form-floating">
+                                <input type="password" name="" class="form-control" id="floatingPassword" placeholder="Password">
+                                <label for="floatingPassword">Password</label>
+                            </div>
+                        </div>
+
+                        <!-- register -->
+
+                        <div class="row">
+                            <button type="submit" class="btn btn-primary btn-lg">
+                              Register <i class="fas fa-sign-in-alt"></i>
+                            </button>
+                        </div>
+                  </div>
               </div>
-              <div class="col">
-                <input type="text" class="form-control" placeholder="Last name" aria-label="Last name">
-              </div>
-        </form>
-        
-    </div>
+          </form>
+      </div> 
 
 {% endblock %}
