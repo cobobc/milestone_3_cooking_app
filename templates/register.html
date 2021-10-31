@@ -12,8 +12,9 @@
 
                         <div class="row">
                             <div class="form-floating mb-3">
-                                <input type="email" name="" class="form-control" id="floatingInput" placeholder="name@example.com">
-                                <label for="floatingInput">Email address</label>
+                                <input type="text" name="username" class="form-control" id="username" placeholder="Username"
+                                    minlength="5" maxlength="25" pattern="^[a-zA-Z0-9]{5,25}$" required>
+                                <label for="username">Username</label>
                             </div>
                         </div>
 
@@ -21,8 +22,9 @@
 
                         <div class="row">
                             <div class="form-floating">
-                                <input type="password" name="" class="form-control" id="floatingPassword" placeholder="Password">
-                                <label for="floatingPassword">Password</label>
+                                <input type="password" name="password" class="form-control" id="password" placeholder="Password" 
+                                    minlength="7" maxlength="20" pattern="^[a-zA-Z0-9]{7,20}$" required>
+                                <label for="password">Password</label>
                             </div>
                         </div>
 
