@@ -1,4 +1,52 @@
 {% extends "base.html" %}
 {% block page %}
-    <h2>{{ page_heading }}</h2>
+
+    <h2 class="center-align">Log In</h2>
+
+      <div class="row">
+          <form class="col" method="POST" action="{{ url_for('login') }}">
+              <div class="card">
+                  <div class="card-body">
+
+                        <!-- email -->
+
+                        <div class="row">
+                            <div class="form-floating mb-3">
+                                <input type="text" name="username" class="form-control" id="username" placeholder="Username"
+                                    minlength="5" maxlength="25" pattern="^[a-zA-Z0-9]{5,25}$" required>
+                                <label for="username">Username</label>
+                            </div>
+                        </div>
+
+                        <!-- password -->
+
+                        <div class="row">
+                            <div class="form-floating">
+                                <input type="password" name="password" class="form-control" id="password" placeholder="Password" 
+                                    minlength="7" maxlength="20" pattern="^[a-zA-Z0-9]{7,20}$" required>
+                                <label for="password">Password</label>
+                            </div>
+                        </div>
+
+                        <!-- login -->
+
+                        <div class="row">
+                            <button type="submit" class="btn btn-primary btn-lg">
+                              Log In <i class="fas fa-sign-in-alt"></i>
+                            </button>
+                        </div>
+                  </div>
+              </div>
+          </form>
+      </div>
+
+      <div class="row">
+        <div class="col">
+            <p class="center-align">
+                New Here?
+                <a href="{{ url_for('register') }}">Register Account</a>
+            </p>
+        </div>
+    </div>
+
 {% endblock %}
