@@ -115,7 +115,7 @@ def logout():
 
 @app.route("/get_recipes")
 def get_recipes():
-    recipes = mongo.db.recipes.find()
+    recipes = list(mongo.db.recipes.find())
     return render_template("recipe_list.html", recipes=recipes)
 
 
