@@ -121,7 +121,8 @@ def get_recipes():
 
 @app.route("/add_recipe")
 def add_recipe():
-    return render_template("add_recipe.html")
+    recipe_type = mongo.db.recipe_type.find().sort("recipe_type", 1)
+    return render_template("add_recipe.html", recipe_type=recipe_type)
 
 
 if __name__ == "__main__":
