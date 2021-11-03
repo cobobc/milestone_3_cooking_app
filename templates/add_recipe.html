@@ -3,7 +3,7 @@
 
     <h2>Add Recipe</h2>
 
-    <form method="POST" action="">
+    <form method="POST" action="{{ url_for('add_recipe') }}">
         <div class="mb-3">
             <i class="fas fa-utensils"></i>
             <label for="recipe_type">Recipe Category</label>
@@ -20,14 +20,15 @@
         </div>
         <div class="mb-3">
             <label for="cooking_time" class="form-label">Cooking Time</label>
-            <input type="text" name="cooking_time" class="form-control validate" id="cooking_time" maxlength="2
-            0">
+            <input type="text" name="cooking_time" class="form-control validate" id="cooking_time" maxlength="20">
         </div>
         <div class="mb-3">
             <label for="ingredients">Ingredients</label>
             <textarea class="form-control validate" name="ingredients" id="ingredients" required></textarea>
         </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="submit" class="btn btn-primary">
+                Submit
+            </button>
     </form>
     
 {% endblock %}
