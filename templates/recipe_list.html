@@ -7,8 +7,9 @@
             {% for recipes in recipes %}
             <div class="accordion-item">
                 <div class="col">
-                    <a href="" class="btn btn-primary btn-sm">Done</a>
+                {% if session.user|lower == recipes.created_by|lower %}
                     <a href="{{ url_for('edit_recipe', recipe_id=recipes._id) }}" class="btn btn-primary btn-sm">Edit</a>
+                {% endif %}
                 </div>
                 <h2 class="accordion-header" id="flush-headingOne">
                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
