@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% block page %}
+
+    <h2>Edit Recipe</h2>
+
+    <form method="POST" action="{{ url_for('edit_recipe', recipe_id=recipe._id) }}">
+        <div class="mb-3">
+            <i class="fas fa-utensils"></i>
+            <label for="recipe_type">Recipe Category</label>
+            <select class="form-select validate" aria-label="Default select example" id="recipe_type" name="recipe_type" required>
+                <option selected>Choose Category</option>
+                {% for recipe in recipe_type %}
+                    <option value="{{ recipe.recipe_type }}">{{ recipe.recipe_type }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div class="mb-3">
+            <label for="recipe_name" class="form-label">Recipe Name</label>
+            <input type="text" name="recipe_name" class="form-control validate" id="recipe_name" aria-describedby="recipeHelp" required>
+        </div>
+        <div class="mb-3">
+            <label for="cooking_time" class="form-label">Cooking Time</label>
+            <input type="text" name="cooking_time" class="form-control validate" id="cooking_time" maxlength="20">
+        </div>
+        <div class="mb-3">
+            <label for="ingredients">Ingredients</label>
+            <textarea class="form-control validate" name="ingredients" id="ingredients" required></textarea>
+        </div>
+            <button type="submit" class="btn btn-primary">
+                Edit
+            </button>
+    </form>
+    
+{% endblock %}
