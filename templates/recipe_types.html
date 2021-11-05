@@ -4,6 +4,10 @@
     <h2>Manage Recipe Types</h2>
 
     <div class="row">
+        <a href="{{ url_for('add_type') }}" class="btn btn-primary">Add Recipe Type</a>
+    </div>
+
+    <div class="row">
         {% for type in recipe_type %}
             <div class="card" style="width: 18rem;">
                 <img src="..." class="card-img-top" alt="...">

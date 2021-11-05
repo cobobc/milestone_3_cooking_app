@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block page %}
+
+    <h2>Add Recipe Type</h2>
+
+    <form method="POST" action="{{ url_for('add_type') }}">
+        <!-- Recipe Type -->
+        <div class="mb-3">
+            <label for="recipe_type" class="form-label">Recipe Type</label>
+            <input type="text" name="recipe_type" class="form-control validate" id="recipe_type" 
+                maxlength="25" aria-describedby="recipeHelp" required>
+        </div>
+        <!-- Submit Button -->
+            <button type="submit" class="btn btn-primary">
+                Add Recipe Type
+            </button>
+    </form>
+    
+{% endblock %}

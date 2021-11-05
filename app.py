@@ -166,7 +166,20 @@ def delete_recipe(recipe_id):
 def get_types():
     recipe_type = list(mongo.db.recipe_type.find().sort("recipe_type", 1))
     return render_template("recipe_types.html", recipe_type=recipe_type)
-    
+
+
+@app.route("/add_type", methods=["GET", "POST"])
+def add_type():
+    if request.method == "POST":
+        recipe_type = {
+            "recipe_type": request.form.get("recipe_type")
+        }
+        mongo.db.recipe_type.insert_one(recipe_type)
+        flash("New Recipe Type Added")
+        return redirect(url_for("get_types"))
+
+    return render_template("add_recipe_type.html")
+
 
 if __name__ == "__main__":
     app.run(
