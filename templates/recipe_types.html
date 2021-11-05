@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block page %}
+    
+    <h2>Manage Recipe Types</h2>
+
+    <div class="row">
+        {% for type in recipe_type %}
+            <div class="card" style="width: 18rem;">
+                <img src="..." class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">{{ type.recipe_type }}</h5>
+                    <a href="#" class="btn btn-primary">Edit</a>
+                    <a href="#" class="btn btn-primary">Delete</a>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+
+
+{% endblock %}

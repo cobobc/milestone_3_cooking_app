@@ -162,6 +162,12 @@ def delete_recipe(recipe_id):
     return redirect(url_for("get_recipes"))
 
 
+@app.route("/get_types")
+def get_types():
+    recipe_type = list(mongo.db.recipe_type.find().sort("recipe_type", 1))
+    return render_template("recipe_types.html", recipe_type=recipe_type)
+    
+
 if __name__ == "__main__":
     app.run(
         host=os.environ.get("IP", "0.0.0.0"),
