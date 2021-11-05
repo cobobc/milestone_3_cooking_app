@@ -181,6 +181,20 @@ def add_type():
     return render_template("add_recipe_type.html")
 
 
+@app.route("/edit_type/<type_id>", methods=["GET", "POST"])
+def edit_type(type_id):
+    if request.method == "POST":
+        submit = {
+            "recipe_type": request.form.get("recipe_type")
+        }
+        mongo.db.recipe_type.update({"_id": ObjectId(type_id)}, submit)
+        flash("Recipe Type Successfully Updated")
+        return redirect(url_for("get_types"))
+
+    type = mongo.db.recipe_type.find_one({"_id": ObjectId(type_id)})
+    return render_template("edit_recipe_type.html", type=type)
+
+
 if __name__ == "__main__":
     app.run(
         host=os.environ.get("IP", "0.0.0.0"),
