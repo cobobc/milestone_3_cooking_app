@@ -195,6 +195,13 @@ def edit_type(type_id):
     return render_template("edit_recipe_type.html", type=type)
 
 
+@app.route("/delete_type/<type_id>")
+def delete_type(type_id):
+    mongo.db.recipe_type.remove({"_id": ObjectId(type_id)})
+    flash("Recipe Type Successfully Deleted")
+    return redirect(url_for("get_types"))
+
+
 if __name__ == "__main__":
     app.run(
         host=os.environ.get("IP", "0.0.0.0"),
