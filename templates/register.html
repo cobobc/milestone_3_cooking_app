@@ -4,17 +4,27 @@
     <h2 class="center-align">Register</h2>
 
       <div class="row">
-          <form class="col" method="POST" action="{{ url_for('register') }}">
+          <form class="col" method="POST" action="{{ url_for('register') }}" onsubmit="return sendMail(this);">
               <div class="card">
                   <div class="card-body">
 
-                        <!-- email -->
+                        <!-- name -->
 
                         <div class="row">
                             <div class="form-floating mb-3">
                                 <input type="text" name="username" class="form-control" id="username" placeholder="Username"
                                     minlength="5" maxlength="25" pattern="^[a-zA-Z0-9]{5,25}$" required>
                                 <label for="username">Username</label>
+                            </div>
+                        </div>
+
+                        <!-- email -->
+
+                        <div class="row">
+                            <div class="form-floating mb-3">
+                                <input type="email" name="email" class="form-control" id="email" placeholder="Email"
+                                    required>
+                                <label for="email">Email</label>
                             </div>
                         </div>
 

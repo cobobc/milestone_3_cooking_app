@@ -49,11 +49,21 @@ def register():
             flash("Oops! This username already exists")
             return redirect(url_for("register"))
 
+        # to check if the email already exists in the database
+        existing_email = mongo.db.emails.find_one(
+            {"email": request.form.get("email")}) 
+
+        if existing_email:
+            flash("Oops! This email already exists")
+            return redirect(url_for("register"))
+
         register = {
             "username": request.form.get("username").lower(),
+            "email": request.form.get("email"),
             "password": generate_password_hash(request.form.get("password"))
         }
         mongo.db.users.insert_one(register)
+        mongo.db.emails.insert_one(register)
 
         # to put the new user into a 'session' cookie
         session["user"] = request.form.get("username").lower()
