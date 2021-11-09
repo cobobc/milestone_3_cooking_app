@@ -3,12 +3,14 @@
     
     <h2>Recipes</h2>
 
+    <!-- Search tool -->
     <div class="row card">
         <form action="{{ url_for('search') }}" method="post">
             <div class="row">
                 <input type="text" name="query" id="query" class="validate" required>
                 <label for="query">Search Recipes</label>
             </div>
+            <!-- Search and reset buttons -->
             <div class="row">
                 <a href="{{ url_for('get_recipes') }}" class="btn btn-primary btn-sm">Reset</a>
                 <button type="submit" class="btn btn-primary">

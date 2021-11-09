@@ -3,7 +3,9 @@
 
     <h2>Edit Recipe</h2>
 
+    <!-- Form to add recipe -->
     <form method="POST" action="{{ url_for('edit_recipe', recipe_id=recipe._id) }}">
+        <!-- Category selection -->
         <div class="mb-3">
             <i class="fas fa-utensils"></i>
             <label for="recipe_type">Recipe Category</label>
@@ -18,20 +20,24 @@
                 {% endfor %}
             </select>
         </div>
+        <!-- Recipe name -->
         <div class="mb-3">
             <label for="recipe_name" class="form-label">Recipe Name</label>
             <input type="text" name="recipe_name" value="{{ recipe.recipe_name }}" class="form-control validate" id="recipe_name" aria-describedby="recipeHelp" required>
         </div>
+        <!-- Cooking time -->
         <div class="mb-3">
             <label for="cooking_time" class="form-label">Cooking Time</label>
             <input type="text" name="cooking_time" value="{{ recipe.cooking_time }}" class="form-control validate" id="cooking_time" maxlength="20">
         </div>
+        <!-- Ingredients -->
         <div class="mb-3">
             <label for="ingredients">Ingredients</label>
             <textarea class="form-control validate" name="ingredients" id="ingredients" required>
                 {{- recipe.ingredients -}}
             </textarea>
         </div>
+        <!-- Edit button -->
             <button type="submit" class="btn btn-primary">
                 Edit
             </button>

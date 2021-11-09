@@ -23,21 +23,6 @@ def index():
     return render_template("index.html")
 
 
-@app.route("/about")
-def about():
-    return render_template("about.html", page_heading="About")
-
-
-@app.route("/contact")
-def contact():
-    return render_template("contact.html", page_heading="Contact")
-
-
-@app.route("/recipes")
-def recipes():
-    return render_template("recipes.html", page_heading="Recipes")
-
-
 @app.route("/register", methods=["GET", "POST"])
 def register():
     if request.method == "POST":

@@ -1,20 +1,33 @@
 {% extends "base.html" %}
 {% block page %}
-    <div class="row gx-4 gx-lg-5 justify-content-center">
-        <div class="col-md-10 col-lg-8 col-xl-7">
-            <!-- Post preview-->
-            <div class="post-preview">
-                    <h2>Want your own personal cook book?</h2>
-                    <p>Have you ever found yourself not remebering where you found that amazing dish you made a few weeks ago?
-                        This app allows you to store all the recipes you haved used online, in a cookbook, and your own personal recipes. 
-                        You have the option to either store a link, upload a screenshot, or insert your own step by step recipe.
-                    </p>
-                </a>
-            </div>
-            <!-- Divider-->
-            <hr class="my-4" />
 
-            <a class="btn btn-primary text-uppercase" href="#!">Older Posts →</a></div>
+    <!-- Page Header-->
+    <header class="masthead">
+        <div class="container position-relative px-4 px-lg-5">
+            <div class="row gx-4 gx-lg-5 justify-content-center">
+                <div class="col-md-10 col-lg-8 col-xl-7">
+                    <div class="site-heading">
+                        <h1>Cook Diary</h1>
+                        <span class="subheading">All of your favourite recipes in one place</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <div class="row">
+        <div class="card">
+            <img src="{{ url_for('static', filename='assets/img/cooking_home.jpg') }}" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h3 class="card-title-home">Want your own personal cook book?</h3>
+                    <p class="card-text">Have you ever found yourself not remebering where you found that amazing dish you made a few weeks ago?
+                        This app allows you to store all the recipes you haved used online, in a cookbook, and your own personal recipes. 
+                        You have the option to either store a link, upload a screenshot, or insert your own step by step recipe.</p>
+                        <!-- Divider-->
+                        <hr class="my-4" />
+                    <a href="{{ url_for('register') }}" class="btn btn-primary home-button">Register Today</a>
+            </div>
         </div>
     </div>
+
 {% endblock %}
