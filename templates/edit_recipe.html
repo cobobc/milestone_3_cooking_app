@@ -10,12 +10,12 @@
             <i class="fas fa-utensils"></i>
             <label for="recipe_type">Recipe Category</label>
             <select class="form-select validate" aria-label="Default select example" id="recipe_type" name="recipe_type" required>
-                <option>Choose Category</option>
+                <option disabled>Choose Category</option>
                 {% for recipe in recipe_type %}
                     {% if recipe.recipe_type == recipe.recipe_type %}
                         <option value="{{ recipe.recipe_type }}" selected>{{ recipe.recipe_type }}</option>
                     {% else %}
-                        <option value="{{ recipe.recipe_type }}">{{ recipe.recipe_type }}</option>
+                    <option value="{{ recipe.recipe_type }}">{{ recipe.recipe_type }}</option>
                     {% endif %}
                 {% endfor %}
             </select>

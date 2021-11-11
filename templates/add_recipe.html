@@ -9,8 +9,8 @@
         <div class="mb-3">
             <i class="fas fa-utensils"></i>
             <label for="recipe_type">Recipe Category</label>
-            <select class="form-select validate" aria-label="Default select example" id="recipe_type" name="recipe_type" required>
-                <option selected>Choose Category</option>
+            <select class="form-select validate" aria-label="Default select example" id="recipe_type" name="recipe_type" placeholder="Recipe Category" required>
+                <option>Choose Category</option>
                 {% for recipe in recipe_type %}
                     <option value="{{ recipe.recipe_type }}">{{ recipe.recipe_type }}</option>
                 {% endfor %}
@@ -38,7 +38,7 @@
         </div>
         <!-- Submit button -->
             <button type="submit" class="btn btn-primary">
-                Submit
+                Add Recipe
             </button>
     </form>
     
