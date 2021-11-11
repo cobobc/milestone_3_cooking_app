@@ -7,7 +7,7 @@
     <div class="row card">
         <form action="{{ url_for('search') }}" method="post">
             <div class="row">
-                <input type="text" name="query" id="query" class="validate" required>
+                <input type="text" name="query" id="query" class="validate" minlength="3" maxlength="40" pattern="^[a-zA-Z0-9]{3,40}$" required>
                 <label for="query">Search Recipes</label>
             </div>
             <!-- Search and reset buttons -->
