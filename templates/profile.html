@@ -3,16 +3,26 @@
 
     
 
-    <div class="row">
-        <div class="card">
+    <div class="row profile-header">
+        <h3>
+            {{ username }}'s Profile
+        </h3>
+    </div>
+
+    <div class="row profile-card">
+        <div class="card col-lg-4 col-md-6 col-sm-12">
             <div class="card-body">
-                <h3>
-                    {{ username }}'s Profile
-                </h3>
+                <img src="{{ url_for('static', filename='assets/img/recipe_profile.jpg') }}" class="card-img-top" alt="FOB gallery 1">
+                <a href="{{ url_for('get_recipes') }}" class="btn btn-primary btn-sm">Recipes</a>
+            </div>
+        </div>
+        <div class="card col-lg-4 col-md-6 col-sm-12">
+            <div class="card-body">
+                <img src="{{ url_for('static', filename='assets/img/recipe_profile.jpg') }}" class="card-img-top" alt="FOB gallery 1">
+                <a href="{{ url_for('add_recipe') }}" class="btn btn-primary btn-sm">Add Recipe</a>
             </div>
         </div>
     </div>
-    <p>placeholder: cards for all nav option to appear here</p>
 
 
 {% endblock %}

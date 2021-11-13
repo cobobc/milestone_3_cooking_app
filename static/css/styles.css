@@ -568,6 +568,7 @@ progress {
 .list-inline {
   padding-left: 0;
   list-style: none;
+  margin-top: 16px;
 }
 
 .list-inline-item {
@@ -7494,7 +7495,7 @@ textarea.form-control-lg {
 
 .text-muted {
   --bs-text-opacity: 1;
-  color: #6c757d !important;
+  color: white !important;
 }
 
 .text-black-50 {
@@ -11128,6 +11129,17 @@ blockquote {
 footer {
   padding-top: 3rem;
   padding-bottom: 3rem;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  background-color: #496884;
+}
+
+.fa-circle {
+  color: white;
+}
+
+.social-icon {
+  color: #496884;
 }
 
 header.masthead {
@@ -11259,4 +11271,17 @@ header.masthead .site-heading .h1 {
   .post-preview > a > .post-title {
     font-size: 2.25rem;
   }
+}
+
+.profile-card {
+  margin: auto;
+  text-align: center;
+  justify-content: center;
+  margin-bottom: 50px;
+}
+
+.profile-header {
+  text-align: center;
+  margin-top: 40px;
+  margin-bottom: 40px;
 }
