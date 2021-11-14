@@ -1,23 +1,32 @@
 {% extends "base.html" %}
 {% block page %}
     
-    <h2>Recipes</h2>
+    <div class="row page-headers">
+        <h2>
+            Recipes
+        </h2>
+    </div>
 
     <!-- Search tool -->
-    <div class="row card">
+    <div class="row search-recipe">
         <form action="{{ url_for('search') }}" method="post">
             <div class="row">
-                <input type="text" name="query" id="query" class="validate" minlength="3" maxlength="40" pattern="^[a-zA-Z0-9]{3,40}$" required>
-                <label for="query">Search Recipes</label>
+                <label for="query"></label>
+                <input type="text" name="query" id="query" class="validate search-box" minlength="3" maxlength="40" pattern="^[a-zA-Z0-9]{3,40}$" 
+                    placeholder="Search Recipes" required>
             </div>
             <!-- Search and reset buttons -->
-            <div class="row">
-                <a href="{{ url_for('get_recipes') }}" class="btn btn-primary btn-sm">Reset</a>
-                <button type="submit" class="btn btn-primary">
-                    Search
-                </button>
-            </div>
+                <div class="search-button-div">
+                    <a href="{{ url_for('get_recipes') }}" class="btn btn-primary search-buttons">Reset</a>
+                    <button type="submit" class="btn btn-primary search-buttons">Search</button>
+                </div>
         </form>   
+    </div>
+
+    <div class="row page-headers">
+        <h3>
+            All Recipes
+        </h3>
     </div>
 
     {% if recipes|length > 0 %}
@@ -64,12 +73,12 @@
                     </div>
                 </div>
                 <div>
-                    <p>
-                        Cooking time : {{ recipes.cooking_time }}
+                    <p class="cooking-time">
+                        Cooking time: {{ recipes.cooking_time }}
                     </p>
                 </div>
                 <div>
-                    <p>
+                    <p class="created-by">
                         Chef - {{ recipes.created_by }}
                     </p>
                 </div>

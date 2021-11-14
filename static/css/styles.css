@@ -4465,6 +4465,8 @@ textarea.form-control-lg {
   justify-content: center;
 }
 
+/*-----------------------------------------------------------cards */
+
 .card {
   position: relative;
   display: flex;
@@ -4477,6 +4479,7 @@ textarea.form-control-lg {
   border-radius: 15px;
   margin: 15px;
 }
+
 
 .card > hr {
   margin-right: 0;
@@ -11305,13 +11308,34 @@ header.masthead .site-heading .h1 {
   margin-bottom: 50px;
 }
 
-.profile-header {
+.page-headers {
   text-align: center;
   margin-top: 40px;
   margin-bottom: 40px;
 }
 
 /*----------------------------------------------------------------------------------Recipe List Page */
+
+.search-box {
+  border: 1px solid;
+  width: 70%;
+  margin: auto;
+  text-align: center;
+  justify-content: center;
+  border-radius: 10px;
+}
+
+.search-button-div {
+  margin: auto;
+  text-align: center;
+  justify-content: center;
+}
+
+.search-buttons {
+  margin-top: 10px;
+  border-radius: 10px;
+}
+
 
 .recipe-headings {
   margin: auto;
@@ -11335,4 +11359,30 @@ header.masthead .site-heading .h1 {
   margin: auto;
   text-align: center;
   justify-content: center;
+}
+
+.cooking-time {
+  margin-top: 15px;
+  margin-bottom: 10px;
+}
+
+.created-by {
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+/*----------------------------------------------------------------Add Recipe */
+
+.add-recipe-form {
+  margin-bottom: 30px;
+}
+
+.add-recipe {
+  margin: auto;
+  text-align: center;
+  justify-content: center;
+}
+
+.add-recipe-button {
+  border-radius: 10px;
 }

@@ -1,7 +1,11 @@
 {% extends "base.html" %}
 {% block page %}
 
-    <h2>Add Recipe Type</h2>
+    <div class="row page-headers">
+        <h2>
+            Add Recipe Type
+        </h2>
+    </div>
 
     <form method="POST" action="{{ url_for('add_type') }}">
         <!-- Recipe Type -->
