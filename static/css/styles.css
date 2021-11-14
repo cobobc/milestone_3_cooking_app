@@ -4453,6 +4453,18 @@ textarea.form-control-lg {
   margin-bottom: 20px;
 }
 
+.flash-heading {
+  color: #496884;
+}
+
+.flash-hr {
+  color: #496884;
+  width: 50%;
+  margin: auto;
+  text-align: center;
+  justify-content: center;
+}
+
 .card {
   position: relative;
   display: flex;
@@ -4461,8 +4473,11 @@ textarea.form-control-lg {
   word-wrap: break-word;
   background-color: #fff;
   background-clip: border-box;
-  border: 1px solid rgba(0, 0, 0, 0.125);
+  border: 1px solid #0085a1;
+  border-radius: 15px;
+  margin: 15px;
 }
+
 .card > hr {
   margin-right: 0;
   margin-left: 0;
@@ -4581,7 +4596,10 @@ textarea.form-control-lg {
   color: #212529;
   text-align: left;
   background-color: #fff;
-  border: 0;
+  border: 1px solid;
+  border-radius: 5px;
+  margin-top: 5px;
+  margin-bottom: 5px;
   overflow-anchor: none;
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out, border-radius 0.15s ease;
 }
@@ -4631,7 +4649,6 @@ textarea.form-control-lg {
 
 .accordion-item {
   background-color: #fff;
-  border: 1px solid rgba(0, 0, 0, 0.125);
 }
 .accordion-item:not(:first-of-type) {
   border-top: 0;
@@ -11292,4 +11309,30 @@ header.masthead .site-heading .h1 {
   text-align: center;
   margin-top: 40px;
   margin-bottom: 40px;
+}
+
+/*----------------------------------------------------------------------------------Recipe List Page */
+
+.recipe-headings {
+  margin: auto;
+  text-align: center;
+  justify-content: center;
+}
+
+.recipe-buttons {
+  margin: auto;
+  text-align: center;
+  justify-content: center;
+}
+
+.recipe-list-button {
+  border-radius: 5px;
+}
+
+.recipe-cards {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  margin: auto;
+  text-align: center;
+  justify-content: center;
 }
