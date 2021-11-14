@@ -11137,13 +11137,13 @@ blockquote {
     background-color: rgba(255, 255, 255, 0.9);
   }
   #mainNav.is-fixed .navbar-brand {
-    color: #212529;
+    color: #fff;
   }
   #mainNav.is-fixed .navbar-brand:focus, #mainNav.is-fixed .navbar-brand:hover {
     color: #0085A1;
   }
   #mainNav.is-fixed .navbar-nav > li.nav-item > a {
-    color: #212529;
+    color: #fff;
   }
   #mainNav.is-fixed .navbar-nav > li.nav-item > a:focus, #mainNav.is-fixed .navbar-nav > li.nav-item > a:hover {
     color: #0085A1;
@@ -11384,5 +11384,48 @@ header.masthead .site-heading .h1 {
 }
 
 .add-recipe-button {
+  border-radius: 10px;
+}
+
+/*--------------------------------------------------------------Manage recipe types */
+
+.add-new-recipe-type {
+  margin: auto;
+  text-align: center;
+  justify-content: center;
+}
+
+.add-new-recipe-type a {
+  border-radius: 10px;
+}
+
+.manage-recipe-type {
+  margin: auto;
+  text-align: center;
+  justify-content: center;
+}
+
+.recipe-type-button {
+  border-radius: 50px;
+}
+
+/*---------------------------------------------------edit recipe type */
+
+.edit-type {
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.edit-div {
+  margin: auto;
+  text-align: center;
+  justify-content: center;
+}
+
+.edit-div a {
+  border-radius: 10px;
+}
+
+.edit-div button {
   border-radius: 10px;
 }

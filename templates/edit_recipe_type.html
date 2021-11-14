@@ -14,11 +14,15 @@
             <input type="text" value="{{ type.recipe_type }}" name="recipe_type" class="form-control validate" id="recipe_type" 
                 maxlength="25" aria-describedby="recipeHelp" required>
         </div>
-        <!-- Submit Button -->
-            <a href="{{ url_for('get_types') }}" class="btn btn-primary">Cancel</a>
-            <button type="submit" class="btn btn-primary">
-                Edit Recipe Type
-            </button>
+        <!-- Submit and cancel button -->
+        <div class="edit-type">
+            <div class="edit-div">
+                <a href="{{ url_for('get_types') }}" class="btn btn-primary">Cancel</a>
+                <button type="submit" class="btn btn-primary">
+                    Edit Recipe Type
+                </button>
+            </div>
+        </div>
     </form>
     
 {% endblock %}
