@@ -7,7 +7,7 @@
         </h2>
     </div>
 
-    <form method="POST" action="{{ url_for('edit_type', type_id=type._id) }}">
+    <form method="POST" action="{{ url_for('edit_type', type_id=type._id) }}" class="form-box">
         <!-- Recipe Type -->
         <div class="mb-3">
             <label for="recipe_type" class="form-label">Recipe Type</label>
@@ -15,8 +15,8 @@
                 maxlength="25" aria-describedby="recipeHelp" required>
         </div>
         <!-- Submit and cancel button -->
-        <div class="edit-type">
-            <div class="edit-div">
+        <div class="edit-add-type">
+            <div class="edit-add-div">
                 <a href="{{ url_for('get_types') }}" class="btn btn-primary">Cancel</a>
                 <button type="submit" class="btn btn-primary">
                     Edit Recipe Type

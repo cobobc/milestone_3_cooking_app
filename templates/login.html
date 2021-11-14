@@ -7,40 +7,42 @@
         </h2>
     </div>
 
-      <div class="row">
-          <form class="col" method="POST" action="{{ url_for('login') }}">
-              <div class="card">
-                  <div class="card-body">
-                        <!-- email -->
-                        <div class="row">
-                            <div class="form-floating mb-3">
-                                <input type="text" name="username" class="form-control" id="username" placeholder="Username"
-                                    minlength="5" maxlength="25" pattern="^[a-zA-Z0-9]{5,25}$" required>
-                                <label for="username">Username</label>
-                            </div>
+    <div class="row">
+        <form class="col" method="POST" action="{{ url_for('login') }}">
+            <div class="card user-card">
+                <div class="card-body">
+                    <!-- email -->
+                    <div class="">
+                        <div class="form-floating mb-3">
+                            <input type="text" name="username" class="form-control" id="username" placeholder="Username"
+                                minlength="5" maxlength="25" pattern="^[a-zA-Z0-9]{5,25}$" required>
+                            <label for="username">Username</label>
                         </div>
-                        <!-- password -->
-                        <div class="row">
-                            <div class="form-floating">
-                                <input type="password" name="password" class="form-control" id="password" placeholder="Password" 
-                                    minlength="7" maxlength="20" pattern="^[a-zA-Z0-9]{7,20}$" required>
-                                <label for="password">Password</label>
-                            </div>
+                    </div>
+                    <!-- password -->
+                    <div class="">
+                        <div class="form-floating">
+                            <input type="password" name="password" class="form-control" id="password" placeholder="Password" 
+                                minlength="7" maxlength="20" pattern="^[a-zA-Z0-9]{7,20}$" required>
+                            <label for="password">Password</label>
                         </div>
-                        <!-- login -->
-                        <div class="row">
+                    </div>
+                    <!-- login -->
+                    <div class="user-btn-div">
+                        <div class="user-button">
                             <button type="submit" class="btn btn-primary btn-lg">
-                              Log In <i class="fas fa-sign-in-alt"></i>
+                            Log In <i class="fas fa-sign-in-alt"></i>
                             </button>
                         </div>
-                  </div>
-              </div>
-          </form>
-      </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
       <!-- Register account -->
-      <div class="row">
-        <div class="col">
-            <p class="center-align">
+    <div class="user-account-div">
+        <div class="user-account">
+            <p>
                 New Here?
                 <a href="{{ url_for('register') }}">Register Account</a>
             </p>

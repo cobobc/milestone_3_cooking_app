@@ -8,10 +8,9 @@
     </div>
 
     <!-- Form to add recipe -->
-    <form method="POST" action="{{ url_for('edit_recipe', recipe_id=recipe._id) }}">
+    <form method="POST" action="{{ url_for('edit_recipe', recipe_id=recipe._id) }}" class="form-box">
         <!-- Category selection -->
         <div class="mb-3">
-            <i class="fas fa-utensils"></i>
             <label for="recipe_type">Recipe Category</label>
             <select class="form-select validate" aria-label="Default select example" id="recipe_type" name="recipe_type" required>
                 <option disabled>Choose Category</option>
@@ -49,12 +48,16 @@
             </textarea>
         </div>
         <!-- Edit button -->
-            <button type="submit" class="btn btn-primary">
-                Edit
-            </button>
-            <a href="{{ url_for('get_recipes') }}" class="btn btn-primary">
-                Cancel
-            </a>
+        <div class="edit-add-type">
+            <div class="edit-add-div">
+                <a href="{{ url_for('get_recipes') }}" class="btn btn-primary">
+                    Cancel
+                </a>
+                <button type="submit" class="btn btn-primary">
+                    Edit
+                </button>
+            </div>
+        </div>
     </form>
     
 {% endblock %}

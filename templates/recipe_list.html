@@ -16,10 +16,10 @@
                     placeholder="Search Recipes" required>
             </div>
             <!-- Search and reset buttons -->
-                <div class="search-button-div">
-                    <a href="{{ url_for('get_recipes') }}" class="btn btn-primary search-buttons">Reset</a>
-                    <button type="submit" class="btn btn-primary search-buttons">Search</button>
-                </div>
+            <div class="search-button-div">
+                <a href="{{ url_for('get_recipes') }}" class="btn btn-primary">Reset</a>
+                <button type="submit" class="btn btn-primary">Search</button>
+            </div>
         </form>   
     </div>
 
@@ -30,67 +30,69 @@
     </div>
 
     {% if recipes|length > 0 %}
-    <div class="row recipe-cards">
-        {% for recipes in recipes %}
-        <div class="card col-lg-4 col-md-6 col-sm-12" style="width: 20rem;">
-            <div class="card-body">
-                <div class="recipe-headings">
-                    <div>
-                        <h3>
-                            {{ recipes.recipe_type }}
-                        </h3>
+    <div class="recipe-list">
+        <div class="row recipe-cards">
+            {% for recipes in recipes %}
+            <div class="card col-lg-4 col-md-6 col-sm-12" style="width: 20rem;">
+                <div class="card-body">
+                    <div class="recipe-headings">
+                        <div>
+                            <h3>
+                                {{ recipes.recipe_type }}
+                            </h3>
+                        </div>
+                        <div>
+                            <h4>
+                                {{ recipes.recipe_name }}
+                            </h4>
+                        </div>
                     </div>
-                    <div>
-                        <h4>
-                            {{ recipes.recipe_name }}
-                        </h4>
-                    </div>
-                </div>
-                <div class="accordion" id="accordionExample">
-                    <div class="accordion-item">
-                        <h5 class="accordion-header" id="headingOne">
-                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                Ingredients
-                            </button>
-                        </h5>
-                        <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-                            <div class="accordion-body">
-                                <p style="white-space: pre-wrap;">{{ recipes.ingredients }}</p>
+                    <div class="accordion" id="accordionExample">
+                        <div class="accordion-item">
+                            <h5 class="accordion-header" id="headingOne">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                    Ingredients
+                                </button>
+                            </h5>
+                            <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+                                    <p style="white-space: pre-wrap;">{{ recipes.ingredients }}</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h5 class="accordion-header" id="headingOne">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                    Cooking Instructions
+                                </button>
+                            </h5>
+                            <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+                                    <p style="white-space: pre-wrap;">{{ recipes.instructions }}</p>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div class="accordion-item">
-                        <h5 class="accordion-header" id="headingOne">
-                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                Cooking Instructions
-                            </button>
-                        </h5>
-                        <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-                            <div class="accordion-body">
-                                <p style="white-space: pre-wrap;">{{ recipes.instructions }}</p>
-                            </div>
+                    <div>
+                        <p class="cooking-time">
+                            Cooking time: {{ recipes.cooking_time }}
+                        </p>
+                    </div>
+                    <div>
+                        <p class="created-by">
+                            Chef - {{ recipes.created_by }}
+                        </p>
+                    </div>
+                    {% if session.user|lower == recipes.created_by|lower %}
+                        <div class="recipe-buttons">
+                            <a href="{{ url_for('edit_recipe', recipe_id=recipes._id) }}" class="btn btn-primary btn-sm recipe-list-button">Edit</a>
+                            <a href="{{ url_for('delete_recipe', recipe_id=recipes._id) }}" class="btn btn-primary btn-sm recipe-list-button" onclick="if (!confirm('Are you sure you want to DELETE this recipe, Chef?')) { return false }">Delete</a>
                         </div>
-                    </div>
+                    {% endif %}
                 </div>
-                <div>
-                    <p class="cooking-time">
-                        Cooking time: {{ recipes.cooking_time }}
-                    </p>
-                </div>
-                <div>
-                    <p class="created-by">
-                        Chef - {{ recipes.created_by }}
-                    </p>
-                </div>
-                {% if session.user|lower == recipes.created_by|lower %}
-                    <div class="recipe-buttons">
-                        <a href="{{ url_for('edit_recipe', recipe_id=recipes._id) }}" class="btn btn-primary btn-sm recipe-list-button">Edit</a>
-                        <a href="{{ url_for('delete_recipe', recipe_id=recipes._id) }}" class="btn btn-primary btn-sm recipe-list-button" onclick="if (!confirm('Are you sure you want to DELETE this recipe, Chef?')) { return false }">Delete</a>
-                    </div>
-                {% endif %}
             </div>
+            {% endfor %}
         </div>
-        {% endfor %}
     </div>
     {% else %}
         <h3 class="red-text">No Results Found</h3>
