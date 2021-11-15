@@ -1,16 +1,16 @@
-# Milestone Project 2
+# Milestone Project 3
 
 ## Purpose 
 
-The purpose of this site is to complete the second Milestone Project for the Code Institute's Full Stack Developer course and can can be found [here](https://cobobc.github.io/milestone_project_2/).
+The purpose of this site is to complete the third Milestone Project for the Code Institute's Full Stack Developer course and can can be found [here](https://cobobc.github.io/milestone_project_2/).
 
-## Tee Time Trivia Website
+## Cookbook Website
 
 ![TTT site desktop overview](assets/images/read_me/ttt_home_desktop.png)
 
 ![TTT site mobile overview](assets/images/read_me/ttt_home_mobile.png)
 
-Ciaran O'Brien has been requested to create a interactive golf quiz website. The website will challenge users on there general golfing knowledge and also - because it's a Ryder Cup year - test the users Ryder Cup knowledge.
+Ciaran O'Brien has been requested to create a cook book app which allows users to create and manage a their own cooking recipes. The app will allows users to create a profile in which they can store their favourite recipes. Users will be able to view other user recipes too. An administation user will be able to do everything a regular user can do but will also have the capacity to create and manage the recipe categories the regular users choose.
 
 ## User Experience (UX)
 
@@ -20,23 +20,39 @@ Ciaran O'Brien has been requested to create a interactive golf quiz website. The
 
 *   As a First Time user, I want to view clear and concise content on mobile and tablet.
 *   As a First Time user, I want to learn and understand what the site offers.
-*   As a First Time user, I want to understand the difference between the two quizzes.
-*   As a First Time user, I want to seemlessly navigate through the 6 pages of the site.
-*   As a First Time user, I want to easily connect with Tee Time Trivia's social platforms.
-*   As a First Time user, I want to challenge my golfing knowledge.
+*   As a First Time user, I want to find the registration page.
+*   As a First Time user, I want to recieve an email that welcomes me and acknowledges that I have created an account.
+*   As a First Time user, I want to add a recipe.
+*   As a First Time user, I want to view the recipe on the recipes page.
+*   As a First Time user, I want to view other user's recipes on the recipes page.
+*   As a First Time user, I want to be able to edit my recipes.
+*   As a First Time user, I want to be able to delete my recipes.
+*   As a First Time user, I want to seemlessly navigate through all pages of the site.
+*   As a First Time user, I want to easily connect with Cookbook's social platforms.
+*   As a First Time user, I want to log out of my account.
 
 #### Returning User Goals
 
-*   As a Returning user, I want to continue to challenge my golfing knowledge with updated quiz questions.
-*   As a Returning user, I want to be challanged with new quiz questions.
-*   As a Returning user, I want to submit my score so I recieve a personal email with my score.
+*   As a Returning user, I want to easily use a recipe while cooking.
+*   As a Returning user, I want to easily add more recipes.
+*   As a Returning user, I want to categorize all my recipes.
+*   As a Returning user, I want to search for certain recipes on the recipes page.
+*   As a Returning user, I want to navigate back to the recipe page after finding a recipe using the search tool.
 
 #### Frequent User Goals
 
 The frequent user wants the following:
 
-*   As a Frequent user, I want to use the email service to record all my results over a period of time.
-*   As a Frequent user, I want to check for new quiz questions.
+*   As a Frequent user, I want to add, edit and delete as many of my recipes as I want.
+*   As a Frequent user, I want to use this app as my only cooking tool.
+*   As a Frequent user, I want to search for new recipes other users have added.
+
+#### Admin User Goals
+
+The admin user wants the following:
+
+*   As an admin user, I want to manage (add, edit and delete) the recipe categories.
+
 
 ### Design
 
@@ -47,11 +63,11 @@ For the special quiz pages a #003399 (blue) and a #FFCC00 (yellow) are used. The
 
 #### Font
 
-The **Rubik** font is used through the whole site.
+The **Rubik** font is used through the whole app.
 
 #### Imagery
 
-The large background images used are sources from www.theindependent.ie and was granted permission to use for this project.
+The images used in the app are sourced from google images and was granted permission to use for this project.
 
 #### Wireframes
 
@@ -64,56 +80,91 @@ There were no limitations.
 
 ## Features 
 
-The features throughout the site are mininal text and larger text for clear navigation from quiz to quiz. Use of Bootstrap Jumbotrons helped achieve this idea.
+The features throughout the site are mininal text, larger text and clear buttons for clear navigation throughout the app. Use of Bootstrap buttons helped this.
 
 ### Existing Features
 
 *   Navigation bar
 
-    *   Featured identically on every page that contains links to the Home page, the 2 quizzes, and the Contact pages. The title in the nav bar provides the user with a link
-        back to the home page. 
-    *   The navigation options contains a dropdown feature that neatly houses links to the two quiz pages. This dropdown also extends to the mobile device with the Bootstrap burger icon.
+    *   Featured on every page, but depending on the user can differ in the following scenarios:
+        1.  A user that has not registered or logged in - the nav bar contains links to the home, register and login pages.
+        1.  A user that has register and is logged in - the nav bar contains links to the home, profile, add recipe and recipes pages, and a link to log out. 
+        1.  An admin user - the nav bar contains links to the home, profile, add recipe, recipes and manage recipe categories pages, and a link to log out.
+        
+    *   The title in the nav bar provides the user with a link back to the home page. 
     *   The navigation options becomes contained in a responsive Bootstrap burger icon for tablet and mobile devices that provides the page option in a dropdown form. 
+    *   When a user has scrolled down a page to a point where the nav bar is no longer visible, as soon as the user begins scrolling up the page, the navbar becomes visible    again.
 
 *   Footer
 
-    *   Featured identically on every page and contains the Tee Time Trivia heading, followed by a hr element to break the footer information up and provide a bit of         breathing space to the user.
-    *   Underneath the hr contains site links to the pages on the quiz site. This was implemented so that the user does not have to scroll back up to the top of the page to continue navigation throughout the website. 
-    *   Another hr element to break the footer information up and provide a bit of breathing space to the user.
-    *   Font awesome icons are use to provide external links to Tee Time Trivia's social platforms. Each external link has the attribute of target="_blank" which
-        opens the link in a new tab, keeping the user on the site and allowing for seemless UX.
+    *   Featured identically on every page and contains Font Awesome icons used to provide external links to Cookbook's social platforms. Each external link has the attribute of target="_blank" which opens the link in a new tab, keeping the user on the site and allowing for seemless UX.
 
 *   Home page
 
-    *   Provides a Jumbotron  that provides quick information about what the website is about and buttons to give the user the option to start quizzing immediately.
-    *   The following section provides headings and short paragraphs to describe the two quizzes and 'Start Quiz' buttons (with links) is located below the each paragraph to direct the user to the subsequent quiz.
-    *   Beside the Quiz special heading is a NEW badge to inform the user that it is a new feature/quiz. This badge will disappear for mobile via bootstraps d-none d-sm-inline attribute because the badge uses too much mobile real estate and it hinders the structure of the page.
+    *   Provies a friendly/inviting cooking image with the Cookbook title and a one line summary of the site over the image.
+    *   Underneath the image there is a jumbtron that provides the user with more detail about what the app offers. 
 
-*   Quiz and Quiz Special pages
+*   Register Page
+
+    *   
 
     *   This page acts as a 'home page' to the relevant quiz the user has chosen.
     *   Large background images that contain large golfing crowds are used to create a feeling of pressure, anticipation and excitement for the challenge ahead (the quiz they are about to take).
     *   The jumbotron underneath the background images contains large and quick information about the quiz and a large button with a link into the actual quiz. The idea of this is to be as clear and simple for the user as possible.
     *   The difference between the two pages is the background image and the colour codes.
 
-*   Quiz question pages
+*   Login Page
 
-    *   This page provides the user with the quiz questions, selection of answers to choose from, and the option to go to the next question, previous question or start the quiz again.
+    *   
+    
+    
+    This page provides the user with the quiz questions, selection of answers to choose from, and the option to go to the next question, previous question or start the quiz again.
     *   The quiz questions, answers and user interactivity are housed in the .js files and are link the relevant .html files to provide the user with simple interactive pages.
     *   The page design is simple with the quiz being the main and only focus of the page (apart from the navbar and footer). This design is calculated - research into other quiz websites on the internet found the actual quiz pages to have images, animations and other text which distract the user from the challenge of the quiz. We want the user to have little distraction so they can focus on the questions.
     *   The user must select an answer to be allowed onto the next question - the user is stopped and an alert feature is provided in case the user tries to proceed to the next question without selecting an answer. The alert instructs the user to select answer.
     *   After the user has answered their last question, the page will provide them with a their total score in the quiz.
     
 
-*   Contact
+*   Profile Page
+
+    *   
 
     *   Email JS functionality via gmail is embedded in the contact form so when the user can inputs their name, email address, quiz score and click 'Submit score' button they will recieve a personal email with their score, congratulations message and a humourous GiF.
     *   A jumbotron with large text with an offer of a personal message from a famous golfer is used at the top of the page to encourage the user to use the the functionality and submit their score. The personal message from a famous golfer comes in the form of a GiF embedded in the email the user receives.
 
 
+*   Add Recipe Page
+
+    *   add and it stored in mongo
+
+*   Recipes Page
+
+    *   
+
+*   Edit Recipe Page
+
+    *   
+
+*   Add Recipe Page
+
+    *   
+
+*   Manage Recipe Types Page
+
+    *   
+
+*   Edit Recipe Types Page
+
+    *   
+
+*   Flash Messages
+
+    *   
+
+
 ### Features Left to Implement
 
-*   Configure the quiz JS code so that the 'Submit Your Score' button only appears when the user completes a quiz.
+*   Popup aleart to confirm if the user wants to log out.
 
 
 ## Technologies Used
@@ -156,6 +207,8 @@ The features throughout the site are mininal text and larger text for clear navi
 1.  Run all pages through the [W3C CSS Validator](http://www.css-validator.org/).
 
 1.  Run all .js files through the [JShint](https://jshint.com/) validator.
+
+1.  Run all python files....
 
 1.  Run a lighthouse test for performance.
 
