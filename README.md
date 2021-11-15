@@ -106,7 +106,11 @@ The features throughout the site are mininal text, larger text and clear buttons
 
 *   Register Page
 
-    *   
+    *   A header with short descriptive text on how to register.
+    *   The form is houses the required fields (username, email, and password) a user must enter to register.
+    *   A large register button makes it clear and easy to register.
+    *   When the user the clicks the register button, the user is sent to their profile page, and their registration details are sent and stored in mongodb.
+    *   There is medium size text under the register button asking the user if they are already registered and provides a link to the log in page in case the user has mistakenly navigated to the register page.
 
     *   This page acts as a 'home page' to the relevant quiz the user has chosen.
     *   Large background images that contain large golfing crowds are used to create a feeling of pressure, anticipation and excitement for the challenge ahead (the quiz they are about to take).
@@ -115,7 +119,11 @@ The features throughout the site are mininal text, larger text and clear buttons
 
 *   Login Page
 
-    *   
+    *   A header with short descriptive text on how to log in.
+    *   The form is houses the required fields (username and password) a user must enter to log in.
+    *   A large log in button makes it clear and easy to login.
+    *   When the user the clicks the login button, the user is sent to their profile page.
+    *   There is medium size text under the register button asking the user if they are new to the site and provides a link to the register page in case the user has mistakenly navigated to the log in page.
     
     
     This page provides the user with the quiz questions, selection of answers to choose from, and the option to go to the next question, previous question or start the quiz again.
