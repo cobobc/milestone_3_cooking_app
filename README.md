@@ -46,7 +46,7 @@ The frequent user wants the following:
 
 *   As a Frequent user, I want to add, edit and delete as many of my recipes as I want.
 *   As a Frequent user, I want to use this app as my only cooking tool.
-*   As a Frequent user, I want to search for new recipes other users have added.
+*   As a Frequent user, I want to search for new recipes other users have added over time.
 
 #### Admin User Goals
 
@@ -216,23 +216,25 @@ The features throughout the site are mininal text, larger text and clear buttons
 
 *   CSS - Used to style the website.
 
-*   JavaScript - used to provide interactive features (the quiz) for the user.
+*   JavaScript - used to provide interactive features to the navbar (sourced from startbootstrap.com) and to always keep the copyright year in the current year (source: Tim Nelson - Tutor at Code Institute)
 
-*   Python - 
+*   Python - used to provide the main app backend functionality, user registration, log in, log out, user data interacting with MongoDB, jinja templating.
 
-*   Flask - 
+*   Flask - a web framework that provided the tools, libraries and technologies required to build the Cookbook app.
 
-*   MongoDB - 
+*   [MongoDB](https://www.mongodb.com/) - used to store the users data.
 
-*   Random UI genrator - 
+*   Werkzeug - used for user password security.
 
-*   Heroku -  
+*   [RandomKeyge](https://randomkeygen.com/) - used to create the secret key variable in the env.py file
 
-*   werkzeug - 
+*   [Heroku](https://id.heroku.com/login) -  used to ????????
 
 *   [EmailJS](https://www.emailjs.com/) - used in conjuction with JS to allow the website to send email to the user.
 
-*   [Bootstrap](https://getbootstrap.com/) - used throughout the site for layout and styling. Imported JavaScript/Query for each page to support the responsive navigation bar burger icon for tablet and mobile.
+*   [StartBootstrap](https://startbootstrap.com/theme/clean-blog) - used this as the source code for the theme of the app. Includes JS for interactive nav bar use.
+
+*   [Bootstrap](https://getbootstrap.com/) - used throughout the site for layout and styling. 
 
 *   [Google Fonts](https://fonts.google.com/) - provided the *Enriqueta* font used throughout the website.
 
@@ -248,7 +250,7 @@ The features throughout the site are mininal text, larger text and clear buttons
 
 *   [PX converter](https://nekocalc.com/px-to-rem-converter) - to covert px values to rem values.
 
-*   [Codepen](https://codepen.io/) - used to help create the code for both quiz.js files and to help create the contact form on the contact page.
+*   [Stack Overflow](https://stackoverflow.com/questions/9139075/how-to-show-a-confirm-message-before-delete) - used to help create the pop up confirmation alerts when the user deletes data or tries to log out.
 
 
 ## Testing
@@ -306,17 +308,27 @@ The HTML, CSS and JavaScript validations produced 0 errors.
 
 ##### Returning Users
 
-*   As a Returning user, I want to continue to challenge my golfing knowledge with updated quiz questions - Testing was performed on both quizes to ensure a continuously seemless and challenging experience for users.
+*   As a Returning user, I want to easily use a recipe while cooking - Testing was performed on the accordian features in the recipe cards to ensure the cook using the app can easily open and close the ingredients and cooking instructions accordians individuallty, so the user doesn't have to scroll through all the ingredients to get to the cooking instructions or visa versa. 
 
-*   As a Returning user, I want to be challanged with new quiz questions - Testing cannot be performed on this parameter as the site will be updated weekly with new questions by employees of Tee Time Trivia.
+*   As a Returning user, I want to easily add more recipes - Testing was performed to ensure a user can create and store as many recipes as they would like and that they all appear on the Recipes page.
 
-*   As a Returning user, I want to submit my score so I recieve a personal email with my score - Testing was performed on the Email JS function to ensure the user receives a response email with their score after they have submitted their score via the website.
+*   As a Returning user, I want to categorize all my recipes - Testing was performed on the choose category dropdown in the Add and Edit recipe forms to ensure a user can create and store as many recipes under a variety of categories.
+
+*   As a Returning user, I want to search for certain recipes on the recipes page - Testing was perfomred on the search bar and the search button to ensure the user can search the recipe list using keywords and that the user is informed if no matches are found for the users keywords.
+
+*   As a Returning user, I want to navigate back to the recipe page after finding a recipe using the search tool - Testing was performed on the reset button of the search tool so a user can easily navigate back the recipe page after using the search tool.
 
 ##### Frequent Users
 
-*   As a Frequent user, I want to use the email service to record all my results over a period of time - Testing was performed on the Email JS function to ensure the user receives a response email with their score after they have submitted their score via the website and that the email saves in the users inbox.
+*   As a Frequent user, I want to add, edit and delete as many of my recipes as I want - Testing was performed on the database and its capacity to (1) Store multiple recipes (2) handle recipe that are constantly being edited, updated, and delated, so that the user has confidence that their data wont be lost and the app can handle their demand for manipulating a recipe when that want.
 
-*   As a Frequent user, I want to try out the seasonal quiz specials - Testing cannot be performed on this parameter as the quiz special will be updated whenever major golfing events are approaching by employees of Tee Time Trivia.
+*   As a Frequent user, I want to use this app as my only cooking tool - Testing cannot be performed on this parameter as this can be subjective and some users may prefer other simailar apps. If we had the capacity we could use analytics to measure rates of returning users and provide surveys to ask how users rate the app, is there other apps that they like too, etc
+
+*   As a Frequent user, I want to search for new recipes other users have added over time - Continuous testing was performed on the search tool to ensure a user can easily search the recipe list using the search tool.
+
+##### Admin User Goals
+
+*   As an admin user, I want to manage (add, edit and delete) the recipe categories - Testing was perfomred on the manage category pages to ensure the admin user can easily and quickly manage the recipe categories to meet the demand of the regular users.
 
 
 #### Lighthouse Test Results
@@ -374,7 +386,10 @@ The following commands were used throughout the project:
 1.  Use the 'git clone' command in terminal followed by the copied git URL.
 1.  A clone of the project will be created locally on your machine.
 
+## Admin Credentials
 
+Username: Admin
+Password: admin123
 
 ## Credits
 
@@ -393,6 +408,7 @@ The large background images used are sourced from www.theindependent.ie and perm
 ### Acknowledgements
 
 I'd like to thank my mentor Spencer Barriball for his guidance, efficiency and positivity throughout my project.
+
 Thank you to Matt Rudge the Senior Product Developer at Code Institute for his lessons on implementing EmailJS into a project.
 Thanks to my fellow students on Slack for helping my link the js quiz code to the html and css code so that my quiz question could appear.
 
