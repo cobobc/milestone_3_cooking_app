@@ -21,6 +21,7 @@ Ciaran O'Brien has been requested to create a cook book app which allows users t
 *   As a First Time user, I want to view clear and concise content on mobile and tablet.
 *   As a First Time user, I want to learn and understand what the site offers.
 *   As a First Time user, I want to find the registration page.
+*   As a First Time user, I want to easily register a Cookbook account.
 *   As a First Time user, I want to recieve an email that welcomes me and acknowledges that I have created an account.
 *   As a First Time user, I want to add a recipe.
 *   As a First Time user, I want to view the recipe on the recipes page.
@@ -90,6 +91,7 @@ The features throughout the site are mininal text, larger text and clear buttons
         1.  A user that has not registered or logged in - the nav bar contains links to the home, register and login pages.
         1.  A user that has register and is logged in - the nav bar contains links to the home, profile, add recipe and recipes pages, and a link to log out. 
         1.  An admin user - the nav bar contains links to the home, profile, add recipe, recipes and manage recipe categories pages, and a link to log out.
+            *   If the user selects the Log Out option on the nav bar, a pop up will appear to confirm the log out. If the user confirms, the user in navigated to the Login page.
         
     *   The title in the nav bar provides the user with a link back to the home page. 
     *   The navigation options becomes contained in a responsive Bootstrap burger icon for tablet and mobile devices that provides the page option in a dropdown form. 
@@ -133,7 +135,8 @@ The features throughout the site are mininal text, larger text and clear buttons
     *   The search bar is postioned near the top of the page so that if the user doesn't want to scroll down the page to find what they want, they can just type keywords of what they are looking for. The search functionality - when prompted - searches through the data within the created recipes. Validation is coded (max and min lengths, and pattern) into the search bar to protect against the potential of someone breaking the site.
     *   If the user has a successful search, they will be presented with the recipe(s) that match the search. The reset button gives the option to the user if they want to see all the recipes again.
     *   All recipes are presented within cards. Within the cards is the recipe category as the main heading followed by the recipe name in a child heading. Underneath is two Bootstrap accordian components which house the ingredients and the cooking instructions respectively. The UX theory here is that if the user is using this app while cooking, they can open and close both accordians to suit their need. For example, It avoids the user having to scroll down through all of the ingredients to get to the cooking instructions. They can simply close the ingredients accordian and open only the cooking instructions.
-    *   If the recipe was not created by the current user, the remaining content in the card is the cooking time and user name who created the recipe. If the recipe was created by the current user, they will have optinon to edit or delete the recipe in button form. If the user selects **Delete**, they are presented with a pop up asking them to confirm deletion. If the user selects **Edit**, they are brought to the edit recipe page.
+    *   If the recipe was not created by the current user, the remaining content in the card is the cooking time and user name who created the recipe. If the recipe was created by the current user, they will have optinon to edit or delete the recipe in button form. If the user selects **Delete**, they are presented with a pop up asking them to confirm deletion. If they confrim the deletion, the recipe is removed for the Recipes page and is also removed from the mongodb database. If the user selects **Edit**, they are brought to the edit recipe page.
+    *   Using the Bootstrap grid system three cards will appear on one row for the desktop. Two cards on one row for table, and one column for mobile.
 
 *   Add Recipe Page
 
@@ -160,15 +163,46 @@ The features throughout the site are mininal text, larger text and clear buttons
   
 *   Manage Recipe Types Page
 
-    *   
+    *   A header with short descriptive text informing the user about how to manage the recipe categories. 
+    *   A large button to add new category is predominant on this page to provide no confusion on how to add. The button links to Add Recipe Category page.
+    *   The categories are presented in card form with the name of the category and an edit and delete button.
+    *   The user is brought to the Edit category page if they click the **Edit** button. If they choose the **Delete** button, a pop up requesting deletion confirmation. If they confrim the deletion, the category is removed for the Manage Recipe Category page and is also removed from the mongodb database.
+    *   Using the Bootstrap grid system four cards will appear on one row for the desktop. Two cards on one row for table, and one column for mobile.
+
+*   Add Recipe Types Page
+
+    *   A header with short descriptive text on how to add a new recipe category.
+    *   A simple form with one text input option for the admin user to type a new category.
+    *   Validation is coded (max length) into the form to protect against the potential of someone breaking the site or accidently creating a jargon category.
+    *   Large Add Category button is underneath the form to make it clear to click the button when done typing the new category. If the user selects the add new category button they will be naviagted back to the Manage Recipe Categories page. The new category data is sent and stored in mongodb.
 
 *   Edit Recipe Types Page
 
-    *   
+    *   A header with short descriptive text on how to edit a recipe category.
+    *   A simple form with one text input option for the admin user to edit the category. The category is prepopulated with the existing category the user wants to edit.
+    *   Validation is coded (max length) into the form to protect against the potential of someone breaking the site or accidently creating a jargon category.
+    *   Large Edit Category button is underneath the form to make it clear to click the button when done typing the edited category. If the user selects the edit category button they will be naviagted back to the Manage Recipe Categories page. The updated category data is sent and stored in mongodb.
+    *   The user can click the Cancel button to discard any edits and return to the Manage Recipe Categories page. 
 
 *   Flash Messages
 
-    *   
+    *   A heading with relevant information for the user appears (with a hr underneath to give spacing) in the following user interactions with the app:
+        *   If a user trying to register enters a username that already exists (top of registration page) - **Oops! This username already exists**
+        *   If a user trying to register enters an email that already exists (top of registration page) - **Oops! This email already exists**
+        *   If a user trying to register enters an email that already exists (top of profile page) - **You have successfully registered! Happy cooking!**
+        *   If a returning user successfully logs in (top of the profile page) - **Welcome, {username}**
+        *   If a returning user enters an incorrect password (top of the log in page) - **Incorrect Username and/or Password**
+        *   If a returning user enters an incorrect username (top of the log in page) - **Incorrect Username and/or Password**
+            * The **Incorrect Username and/or Password** message was chosen for both password and username protection. This is user security protection. The hypothtetical hacker will not know what field they have entered incorrect details into.
+        *   If a user has logged out (top of the log in page) - **You have been logged out**
+        *   When a user has added a new recipe (top of Recipes page) - **Your recipe has been added**
+        *   When a user has edited a recipe (top of Recipes page) - **Your recipe has been updated**
+        *   When a user has deleted a recipe (top of Recipes page) - **Your recipe was successfully deleted**
+        *   When an admin user has added a new recipe category (top of Recipes page) - **New Recipe Type Added**
+        *   When an admin user has edited a recipe category (top of Recipes page) - **Recipe Type Successfully Updated**
+        *   When an admin user has deleted a recipe category (top of Recipes page) - **Recipe Type Successfully Deleted**
+    *   If a user refreshes the page on which a flash message is displayed, the flash message with disappear. 
+        
 
 
 ### Features Left to Implement
@@ -183,6 +217,18 @@ The features throughout the site are mininal text, larger text and clear buttons
 *   CSS - Used to style the website.
 
 *   JavaScript - used to provide interactive features (the quiz) for the user.
+
+*   Python - 
+
+*   Flask - 
+
+*   MongoDB - 
+
+*   Random UI genrator - 
+
+*   Heroku -  
+
+*   werkzeug - 
 
 *   [EmailJS](https://www.emailjs.com/) - used in conjuction with JS to allow the website to send email to the user.
 
@@ -236,13 +282,27 @@ The HTML, CSS and JavaScript validations produced 0 errors.
 
 *   As a First Time user, I want to learn and understand what the site offers - Testing was performed to verify enough information is uploaded to tell the user about what the site offers.
 
-*   As a First Time user, I want to understand the difference between the two quizzes - Testing was performed to verify enough information is uploaded to tell the user of the differences between the golf general knowledge quiz and the golf special quiz.
+*   As a First Time user, I want to find the registration page - Testing was performed to verify enough information is given to user about how to navigate to the regisration page.
+
+*   As a First Time user, I want to easily register a Cookbook account - Testing was performed on the registration form to verify that a user can register an account on this app.
+
+*   As a First Time user, I want to recieve an email that welcomes me and acknowledges that I have created an account - Testing was performed to verify that when a user create an account they recieve a personal email.
+
+*   As a First Time user, I want to add a recipe - Testing was performed on the recipe form input fields and the add recipe buttons to ensure a user can create a recipe.
+
+*   As a First Time user, I want to view the recipe on the recipes page - Testing was performed on the recipe cards and the accordian features within it to ensure the user can view their recipe.
+
+*   As a First Time user, I want to view other user's recipes on the recipes page - Testing was performed on the recipe cards and the accordian features within them to ensure the user can view other user's recipes.
+
+*   As a First Time user, I want to be able to edit my recipes - Testing was performed on the user recipe cards on the Recipes page to ensure the edit button navigates the user to the Edit Recipe page. Testing was performed on all inputs and buttons in the edit recipe form function correctly so that the user can successfully update their recipe.
+
+*   As a First Time user, I want to be able to delete my recipes - Testing was performed on the user recipe cards on the Recipes page to ensure that when the Delete button is selected, a pop up appears to confirm that the user want to delete. If the user confirms deletion, testing was done to confirm that the recipe has been removed from the Recipes page.
 
 *   As a First Time user, I want to seemlessly navigate through the 6 pages of the site - Testing was performed on all navigation links to ensure the user can seemlessly navigate throughout the site.
 
-*   As a First Time user, I want to easily connect with Tee Time Trivia's social platforms - Testing was performed on all social media links to ensure they all opened in a new tab so the user doesn't have to leave the site.
+*   As a First Time user, I want to easily connect with Cookbook's social platforms - Testing was performed on the socail icon links in the footer to ensure that the user isnavigated to the chosen social media platform and that the link opens in a new tab to keep the user in the app allowing for seemless UX.
 
-*   As a First Time user, I want to challenge my golfing knowledge - Testing was performed on both quizes to ensure a seemless and challenging experience for users.
+*   As a First Time user, I want to log out of my account - Testing was performed on the Log Out link in the Navigation bar to enusre that the user can successfully log out, that when the link is selected a pop up appear asking the user to confirm that they want to logout (as to avoid an unwanted log out), and the upon a successful logout, the user is redirected back to the log in page.
 
 ##### Returning Users
 
