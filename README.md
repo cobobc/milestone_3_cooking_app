@@ -408,7 +408,7 @@ The large background images used are sourced from www.theindependent.ie and perm
 ### Acknowledgements
 
 I'd like to thank my mentor Spencer Barriball for his guidance, efficiency and positivity throughout my project.
-
+Thank you to Tim Nelson a Tutor at Code Institute whose teaching techniques helped me understand how to implement Python into a project. A lot of this project's code structing was sourced from Tim's amazing Mini Project and Flash Framework lessons.
 Thank you to Matt Rudge the Senior Product Developer at Code Institute for his lessons on implementing EmailJS into a project.
 Thanks to my fellow students on Slack for helping my link the js quiz code to the html and css code so that my quiz question could appear.
 
