@@ -110,12 +110,8 @@ The features throughout the site are mininal text, larger text and clear buttons
     *   The form is houses the required fields (username, email, and password) a user must enter to register.
     *   A large register button makes it clear and easy to register.
     *   When the user the clicks the register button, the user is sent to their profile page, and their registration details are sent and stored in mongodb.
+    *   When the user the clicks the register button, they will recieve an email welcoming them and affirming they have registered. This feature is via EmailJS funtionality embedded in the registration form.
     *   There is medium size text under the register button asking the user if they are already registered and provides a link to the log in page in case the user has mistakenly navigated to the register page.
-
-    *   This page acts as a 'home page' to the relevant quiz the user has chosen.
-    *   Large background images that contain large golfing crowds are used to create a feeling of pressure, anticipation and excitement for the challenge ahead (the quiz they are about to take).
-    *   The jumbotron underneath the background images contains large and quick information about the quiz and a large button with a link into the actual quiz. The idea of this is to be as clear and simple for the user as possible.
-    *   The difference between the two pages is the background image and the colour codes.
 
 *   Login Page
 
@@ -125,38 +121,43 @@ The features throughout the site are mininal text, larger text and clear buttons
     *   When the user the clicks the login button, the user is sent to their profile page.
     *   There is medium size text under the register button asking the user if they are new to the site and provides a link to the register page in case the user has mistakenly navigated to the log in page.
     
-    
-    This page provides the user with the quiz questions, selection of answers to choose from, and the option to go to the next question, previous question or start the quiz again.
-    *   The quiz questions, answers and user interactivity are housed in the .js files and are link the relevant .html files to provide the user with simple interactive pages.
-    *   The page design is simple with the quiz being the main and only focus of the page (apart from the navbar and footer). This design is calculated - research into other quiz websites on the internet found the actual quiz pages to have images, animations and other text which distract the user from the challenge of the quiz. We want the user to have little distraction so they can focus on the questions.
-    *   The user must select an answer to be allowed onto the next question - the user is stopped and an alert feature is provided in case the user tries to proceed to the next question without selecting an answer. The alert instructs the user to select answer.
-    *   After the user has answered their last question, the page will provide them with a their total score in the quiz.
-    
-
 *   Profile Page
 
-    *   
+    *   A header with short descriptive text informing the user about the options available on the page.
+    *   For desktop and tablet, there are two cards on the same row with an image and a button each so the user can either go the recipes page or add recipes page. On mobile the cards will sit on top of each other in the same column.
 
-    *   Email JS functionality via gmail is embedded in the contact form so when the user can inputs their name, email address, quiz score and click 'Submit score' button they will recieve a personal email with their score, congratulations message and a humourous GiF.
-    *   A jumbotron with large text with an offer of a personal message from a famous golfer is used at the top of the page to encourage the user to use the the functionality and submit their score. The personal message from a famous golfer comes in the form of a GiF embedded in the email the user receives.
-
-
-*   Add Recipe Page
-
-    *   add and it stored in mongo
 
 *   Recipes Page
 
-    *   
-
-*   Edit Recipe Page
-
-    *   
+    *   A header with short descriptive text informing the user about the recipes page. 
+    *   The search bar is postioned near the top of the page so that if the user doesn't want to scroll down the page to find what they want, they can just type keywords of what they are looking for. The search functionality - when prompted - searches through the data within the created recipes. Validation is coded (max and min lengths, and pattern) into the search bar to protect against the potential of someone breaking the site.
+    *   If the user has a successful search, they will be presented with the recipe(s) that match the search. The reset button gives the option to the user if they want to see all the recipes again.
+    *   All recipes are presented within cards. Within the cards is the recipe category as the main heading followed by the recipe name in a child heading. Underneath is two Bootstrap accordian components which house the ingredients and the cooking instructions respectively. The UX theory here is that if the user is using this app while cooking, they can open and close both accordians to suit their need. For example, It avoids the user having to scroll down through all of the ingredients to get to the cooking instructions. They can simply close the ingredients accordian and open only the cooking instructions.
+    *   If the recipe was not created by the current user, the remaining content in the card is the cooking time and user name who created the recipe. If the recipe was created by the current user, they will have optinon to edit or delete the recipe in button form. If the user selects **Delete**, they are presented with a pop up asking them to confirm deletion. If the user selects **Edit**, they are brought to the edit recipe page.
 
 *   Add Recipe Page
 
-    *   
+    *   A header with short descriptive text on how to add recipe.
+    *   An easy to use form with the following fields:
+        1.  Recipe category - this is a dropdown option. The user can choose from the different recipe categories. The categories and manged by an Admin account.
+        1.  Recipe name - user types recipe name.
+        1.  Cooking Time - user types cooking time.
+        1.  Ingredients - user types ingredients.
+        1.  Cooking Instructions - user types cooking instructions.
+    *   The user then selects **Add Recipe**. This sends the user back to the Recipes pages with a message at the top of the page informing them that the recipe has been successfully added to the recipes page. The recipe data is sent and stored in mongodb.
 
+*   Edit Recipe Page
+
+    *   A header with short descriptive text on how to edit a recipe.
+    *   An easy to use form with the fields that are already populated with the existing recipe data:
+        1.  Recipe category - this is a dropdown option. The user can choose to edit from the different recipe categories.
+        1.  Recipe name - user can edit recipe name.
+        1.  Cooking Time - user can edit cooking time.
+        1.  Ingredients - user can edit ingredients.
+        1.  Cooking Instructions - user can edit cooking instructions.
+    *   The user then selects **Edit**. This sends the user back to the Recipes pages with a message at the top of the page informing them that the recipe has been successfully updated. The updated recipe data is sent and stored in mongodb.  
+    *   If the user doesn't want to edit or just wants to navigate back to the REcipes page they can select the **Cancel** button.
+  
 *   Manage Recipe Types Page
 
     *   
