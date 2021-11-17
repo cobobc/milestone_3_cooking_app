@@ -36,24 +36,24 @@
         <!-- Ingredients -->
         <div class="mb-3">
             <label for="ingredients">Ingredients</label>
-            <textarea class="form-control validate" name="ingredients" id="ingredients" required>
+            <textarea class="form-control validate" name="ingredients" id="ingredients" aria-label="Ingredients text area" required>
                 {{- recipe.ingredients -}}
             </textarea>
         </div>
         <!-- Instructions -->
         <div class="mb-3">
             <label for="instructions">Cooking Instructions</label>
-            <textarea class="form-control validate" name="instructions" id="instructions">
+            <textarea class="form-control validate" name="instructions" id="instructions" aria-label="Instructions text area">
                 {{- recipe.instructions -}}
             </textarea>
         </div>
         <!-- Edit button -->
         <div class="edit-add-type">
             <div class="edit-add-div">
-                <a href="{{ url_for('get_recipes') }}" class="btn btn-primary">
+                <a href="{{ url_for('get_recipes') }}" class="btn btn-primary" aria-label="Cancel button">
                     Cancel
                 </a>
-                <button type="submit" class="btn btn-primary">
+                <button type="submit" class="btn btn-primary" aria-label="Edit button">
                     Edit
                 </button>
             </div>

@@ -23,7 +23,7 @@
                         <div class="">
                             <div class="form-floating mb-3">
                                 <input type="email" name="email" class="form-control" id="email" placeholder="Email"
-                                    required>
+                                    aria-label="Email input" required>
                                 <label for="email">Email</label>
                             </div>
                         </div>
@@ -31,14 +31,14 @@
                         <div class="">
                             <div class="form-floating">
                                 <input type="password" name="password" class="form-control" id="password" placeholder="Password" 
-                                    minlength="7" maxlength="20" pattern="^[a-zA-Z0-9]{7,20}$" required>
+                                    minlength="7" maxlength="100" pattern="^[a-zA-Z0-9]{7,100}$" aria-label="Password input" required>
                                 <label for="password">Password</label>
                             </div>
                         </div>
                         <!-- register -->
                         <div class="user-btn-div">
                             <div class="user-button">
-                                <button type="submit" class="btn btn-primary btn-lg">
+                                <button type="submit" class="btn btn-primary btn-lg" aria-label="Register button">
                                 Register <i class="fas fa-sign-in-alt"></i>
                                 </button>
                             </div>

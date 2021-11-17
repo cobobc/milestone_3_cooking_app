@@ -23,7 +23,8 @@
             <!-- Recipe name -->
             <div class="mb-3">
                 <label for="recipe_name" class="form-label">Recipe Name</label>
-                <input type="text" name="recipe_name" class="form-control validate" id="recipe_name" aria-describedby="recipeHelp" required>
+                <input type="text" name="recipe_name" class="form-control validate" id="recipe_name"
+                    aria-describedby="recipeHelp" required>
             </div>
             <!-- Cooking Time -->
             <div class="mb-3">
@@ -33,16 +34,18 @@
             <!-- Ingredients -->
             <div class="mb-3">
                 <label for="ingredients">Ingredients</label>
-                <textarea class="form-control validate" name="ingredients" id="ingredients" required></textarea>
+                <textarea class="form-control validate" name="ingredients" id="ingredients"
+                aria-label="Ingredients text area" required></textarea>
             </div>
             <!-- Instructions -->
             <div class="mb-3">
                 <label for="instructions">Cooking Instructions</label>
-                <textarea class="form-control validate" name="instructions" id="instructions"></textarea>
+                <textarea class="form-control validate" name="instructions" 
+                    id="instructions" aria-label="Instructions text area"></textarea>
             </div>
             <!-- Submit button -->
             <div class="add-recipe">
-                <button type="submit" class="btn btn-primary add-recipe-button">
+                <button type="submit" class="btn btn-primary add-recipe-button" aria-label="Add recipe button">
                     Add Recipe
                 </button>
             </div>
