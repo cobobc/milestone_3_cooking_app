@@ -11466,6 +11466,12 @@ footer {
   justify-content: center;
 }
 
+.password-help {
+  margin: 0;
+  font-size: .9rem;
+  font-style: italic;
+}
+
 /*---------------------------------------------------------Page heading and descriptions */
 
 .page-headers {
