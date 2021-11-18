@@ -606,6 +606,15 @@ progress {
   height: auto;
 }
 
+.img {
+  max-width: 100%;
+  height: auto;
+}
+
+.add-recipe-img {
+  padding-bottom: .688rem;
+}
+
 .img-thumbnail {
   padding: 0.25rem;
   background-color: #fff;
@@ -3003,6 +3012,7 @@ textarea.form-control-lg {
   color: #fff;
   background-color: #0085A1;
   border-color: #0085A1;
+  border-radius: 3rem;
 }
 .btn-primary:hover {
   color: #fff;
@@ -4475,11 +4485,17 @@ textarea.form-control-lg {
   word-wrap: break-word;
   background-color: #fff;
   background-clip: border-box;
-  border: 1px solid #0085a1;
-  border-radius: .938rem;
+  border: 0.3rem solid #0085A1;
+  border-radius: 4.125rem;
   margin: .938rem;
 }
 
+.card-body {
+  flex: 1 1 auto;
+  padding: 1rem 1rem;
+  background-color: #fff;
+  border-radius: 4.125rem;
+}
 
 .card > hr {
   margin-right: 0;
@@ -4498,11 +4514,6 @@ textarea.form-control-lg {
 .card > .card-header + .list-group,
 .card > .list-group + .card-footer {
   border-top: 0;
-}
-
-.card-body {
-  flex: 1 1 auto;
-  padding: 1rem 1rem;
 }
 
 .card-title {
@@ -11276,7 +11287,7 @@ footer {
   font-size: 1.4rem;
 }
 
-/*---------------------------------------------------------Recipe Page*/
+/*---------------------------------------------------------Profile Page*/
 
 .profile-card {
   margin: auto;
@@ -11284,6 +11295,7 @@ footer {
   justify-content: center;
   margin-bottom: 3.125rem;
 }
+
 
 /*----------------------------------------------------------------------------------Recipe List Page */
 

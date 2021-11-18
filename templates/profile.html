@@ -15,16 +15,16 @@
     </div>
     <!--------------------------------------------------------------------- Main profile page -->
     <div class="row profile-card">
-        <div class="card col-lg-4 col-md-6 col-sm-12">
+        <div class="col-lg-4 col-md-6 col-sm-12">
             <div class="card-body">
-                <img src="{{ url_for('static', filename='assets/img/recipe_profile.jpg') }}" class="card-img-top" alt="FOB gallery 1">
-                <a href="{{ url_for('get_recipes') }}" class="btn btn-primary btn-sm">Recipes</a>
+                <img src="{{ url_for('static', filename='assets/img/chef.jpg') }}" class="card-img-top" alt="Chef cooking">
+                <a href="{{ url_for('get_recipes') }}" class="btn btn-primary profile-btn">Recipes</a>
             </div>
         </div>
-        <div class="card col-lg-4 col-md-6 col-sm-12">
+        <div class="col-lg-4 col-md-6 col-sm-12">
             <div class="card-body">
-                <img src="{{ url_for('static', filename='assets/img/recipe_profile.jpg') }}" class="card-img-top" alt="FOB gallery 1">
-                <a href="{{ url_for('add_recipe') }}" class="btn btn-primary btn-sm">Add Recipe</a>
+                <img src="{{ url_for('static', filename='assets/img/chef2.jpg') }}" class="card-img-top add-recipe-img" alt="Chef prepping">
+                <a href="{{ url_for('add_recipe') }}" class="btn btn-primary profile-btn">Add Recipe</a>
             </div>
         </div>
     </div>

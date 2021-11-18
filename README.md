@@ -6,9 +6,7 @@ The purpose of this site is to complete the third Milestone Project for the Code
 
 ## Cookbook Website
 
-![Cookbook desktop overview](static/assets/img/readme_desktop.png)
-
-![Cookbook mobile overview](static/assets/img/readme_mobile.png)
+![Cookbook overview](static/assets/img/cookbook_app.png)
 
 Ciaran O'Brien has been requested to create a cook book app which allows users to create and manage a their own cooking recipes. The app will allows users to create a profile in which they can store their favourite recipes. Users will be able to view other user recipes too. An administation user will be able to do everything a regular user can do but will also have the capacity to create and manage the recipe categories the regular users choose.
 
