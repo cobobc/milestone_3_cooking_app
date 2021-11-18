@@ -1,20 +1,18 @@
 {% extends "base.html" %}
 {% block page %}
 
-    <!-- Page Header-->
+    <!-------------------------------------------------------------------------------- Page Header-->
     <div class="row title-div">
         <div class="site-header">
             <h1>Cookbook</h1>
             <span class="subheader">All of your favourite recipes in one place</span>
         </div>
     </div>
-
+    <!-------------------------------------------------------------------------------- Main image -->
     <div class="row">
         <img src="{{ url_for('static', filename='assets/img/cooking_home.jpg') }}" class="card-img-top" alt="Food image">
     </div>
-    
-
-
+    <!------------------------------------------------------------------------------------- About -->
     <div class="row index-text">
         <div class="index-description">
             <h3>About Cookbook</h3>
@@ -26,7 +24,7 @@
             </p>
         </div>
     </div>
-
+    <!----------------------------------------------------------------------------------- link to register page -->
     <div class="row register-button">
             <a href="{{ url_for('register') }}" class="btn btn-primary" aria-label="Register button">Register Now</a>
     </div>

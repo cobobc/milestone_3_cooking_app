@@ -1,60 +1,61 @@
 {% extends "base.html" %}
 {% block page %}
 
+    <!-------------------------------------------------------------------------------- Page Header-->
     <div class="row page-headers">
         <h2>
             Register
         </h2>
     </div>
-
-      <div class="row">
-          <form class="col" method="POST" action="{{ url_for('register') }}" onsubmit="return sendMail(this);">
-              <div class="card user-card">
-                  <div class="card-body">
-                        <!-- name -->
-                        <div class="">
-                            <div class="form-floating mb-3">
-                                <input type="text" name="username" class="form-control" id="username" placeholder="Username"
-                                    minlength="5" maxlength="25" pattern="^[a-zA-Z0-9]{5,25}$" required>
-                                <label for="username">Username</label>
-                            </div>
+    <!------------------------------------------------------------ Form to register -->
+    <div class="row">
+        <form class="col" method="POST" action="{{ url_for('register') }}" onsubmit="return sendMail(this);">
+            <div class="card user-card">
+                <div class="card-body">
+                    <!-- name -->
+                    <div class="">
+                        <div class="form-floating mb-3">
+                            <input type="text" name="username" class="form-control" id="username" placeholder="Username"
+                                minlength="5" maxlength="25" pattern="^[a-zA-Z0-9]{5,25}$" required>
+                            <label for="username">Username</label>
                         </div>
-                        <!-- email -->
-                        <div class="">
-                            <div class="form-floating mb-3">
-                                <input type="email" name="email" class="form-control" id="email" placeholder="Email"
-                                    aria-label="Email input" required>
-                                <label for="email">Email</label>
-                            </div>
+                    </div>
+                    <!-- email -->
+                    <div class="">
+                        <div class="form-floating mb-3">
+                            <input type="email" name="email" class="form-control" id="email" placeholder="Email"
+                                aria-label="Email input" required>
+                            <label for="email">Email</label>
                         </div>
-                        <!-- password -->
-                        <div class="">
-                            <div class="form-floating">
-                                <input type="password" name="password" class="form-control" id="password" placeholder="Password" 
-                                    minlength="7" maxlength="100" pattern="^[a-zA-Z0-9]{7,100}$" aria-label="Password input" required>
-                                <label for="password">Password</label>
-                            </div>
+                    </div>
+                    <!-- password -->
+                    <div class="">
+                        <div class="form-floating">
+                            <input type="password" name="password" class="form-control" id="password" placeholder="Password" 
+                                minlength="7" maxlength="100" pattern="^[a-zA-Z0-9]{7,100}$" aria-label="Password input" required>
+                            <label for="password">Password</label>
                         </div>
-                        <!-- register -->
-                        <div class="user-btn-div">
-                            <div class="user-button">
-                                <button type="submit" class="btn btn-primary btn-lg" aria-label="Register button">
-                                Register <i class="fas fa-sign-in-alt"></i>
-                                </button>
-                            </div>
+                    </div>
+                    <!-- register -->
+                    <div class="user-btn-div">
+                        <div class="user-button">
+                            <button type="submit" class="btn btn-primary btn-lg" aria-label="Register button">
+                            Register <i class="fas fa-sign-in-alt"></i>
+                            </button>
                         </div>
-                  </div>
-              </div>
-          </form>
-      </div> 
-      <!-- Log In -->
-      <div class="user-account-div">
-        <div class="user-account">
-            <p>
-                Already Registered?
-                <a href="{{ url_for('login') }}">Log In</a>
-            </p>
-        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div> 
+    <!-- Log In -->
+    <div class="user-account-div">
+    <div class="user-account">
+        <p>
+            Already Registered?
+            <a href="{{ url_for('login') }}">Log In</a>
+        </p>
     </div>
+</div>
 
 {% endblock %}

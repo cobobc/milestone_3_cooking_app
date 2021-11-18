@@ -23,7 +23,7 @@
 </head>
 <body>
 
-    <!-- Navigation -->
+    <!---------------------------------------------------------------------------------------------------------- Navigation -->
         <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #9de3c5;" id="mainNav">
             <div class="container px-4 px-lg-5">
                 <a class="navbar-brand" href="{{ url_for('index') }}">Cookbook</a>
@@ -51,9 +51,7 @@
                 </div>
             </div>
         </nav>
-
-        <!-- flash messages -->
-
+        <!--------------------------------------------------------------------------------------- flash messages -->
         <section>
             {% with messages = get_flashed_messages() %}
                 {% if messages %}
@@ -66,9 +64,7 @@
                 {% endif %}
             {% endwith %}
         </section>
-
-
-        <!-- Main Content-->
+        <!--------------------------------------------------------------------------------------------- Main Content-->
         <div class="container">
             
 
@@ -77,8 +73,7 @@
 
 
         </div>
-
-        <!-- Footer-->
+        <!--------------------------------------------------------------------------------------------- Footer-->
         <footer>
             <div class="row no-gutter gx-4 gx-lg-5 justify-content-center">
                 <div class="col-md-10 col-lg-8 col-xl-7">

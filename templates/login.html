@@ -1,12 +1,13 @@
 {% extends "base.html" %}
 {% block page %}
 
+    <!-------------------------------------------------------------------------------- Page Header-->
     <div class="row page-headers">
         <h2>
             Log In
         </h2>
     </div>
-
+    <!-------------------------------------------------------------------------------------- Form to log in -->
     <div class="row">
         <form class="col" method="POST" action="{{ url_for('login') }}">
             <div class="card user-card">
@@ -39,7 +40,7 @@
             </div>
         </form>
     </div>
-      <!-- Register account -->
+      <!-------------------------------------------------------- Register account -->
     <div class="user-account-div">
         <div class="user-account">
             <p>

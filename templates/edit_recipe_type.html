@@ -1,12 +1,13 @@
 {% extends "base.html" %}
 {% block page %}
 
+    <!-------------------------------------------------------------------------------- Page Header-->
     <div class="row page-headers">
         <h2>
             Edit Recipe Types
         </h2>
     </div>
-
+    <!------------------------------------------------------------- Form to edit recipe type -->
     <form method="POST" action="{{ url_for('edit_type', type_id=type._id) }}" class="form-box">
         <!-- Recipe Type -->
         <div class="mb-3">

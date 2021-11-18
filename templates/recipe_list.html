@@ -1,13 +1,14 @@
 {% extends "base.html" %}
 {% block page %}
     
+    <!-------------------------------------------------------------------------------- Page Header-->
     <div class="row page-headers">
         <h2>
             Recipes
         </h2>
     </div>
 
-    <!-- Search tool -->
+    <!------------------------------------------------------ Search tool -->
     <div class="row search-recipe">
         <form action="{{ url_for('search') }}" method="post">
             <div class="row">
@@ -15,20 +16,21 @@
                 <input type="text" name="query" id="query" class="validate search-box" minlength="3" maxlength="40" pattern="^[a-zA-Z0-9]{3,40}$" 
                     placeholder="Search recipe names or ingredients" aria-label="search tool" required>
             </div>
-            <!-- Search and reset buttons -->
+            <!---------------------------------- Search and reset buttons -->
             <div class="search-button-div">
                 <a href="{{ url_for('get_recipes') }}" class="btn btn-primary">Reset</a>
                 <button type="submit" class="btn btn-primary" aria-label="Submit search button">Search</button>
             </div>
         </form>   
     </div>
-
+    <!------------------------------------------------------------ All recipes header -->
     <div class="row page-headers">
         <h3>
             All Recipes
         </h3>
     </div>
 
+    <!------------------------------------------------------------ Recipe list of cards -->
     {% if recipes|length > 0 %}
     <div class="recipe-list">
         <div class="row recipe-cards">
@@ -47,6 +49,7 @@
                             </h4>
                         </div>
                     </div>
+                    <!------------------------------------------------------------ Accordian features with cards -->
                     <div class="accordion" id="accordionExample">
                         <div class="accordion-item">
                             <h5 class="accordion-header" id="headingOne">
@@ -87,6 +90,7 @@
                             Chef - {{ recipes.created_by }}
                         </p>
                     </div>
+                    <!------------------------------------------------------------ edit and delete buttons -->
                     {% if session.user|lower == recipes.created_by|lower %}
                         <div class="recipe-buttons">
                             <a href="{{ url_for('edit_recipe', recipe_id=recipes._id) }}" 
@@ -101,6 +105,7 @@
             {% endfor %}
         </div>
     </div>
+    <!------------------------------------------------------------ If no result are found message -->
     {% else %}
         <h3 class="red-text">No Results Found</h3>
     {% endif %}
