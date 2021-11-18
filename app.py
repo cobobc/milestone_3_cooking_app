@@ -20,11 +20,15 @@ mongo = PyMongo(app)
 
 @app.route("/")
 def index():
+    """ Function to render index.html """
     return render_template("index.html")
 
 
 @app.route("/register", methods=["GET", "POST"])
 def register():
+    """ Function that allows the user to register an
+    account using a username, email and password. The
+    funtion sends the user input data to mongodb """
     if request.method == "POST":
         # to check if the username already exists in the database
         existing_user = mongo.db.users.find_one(
@@ -60,6 +64,10 @@ def register():
 
 @app.route("/login", methods=["GET", "POST"])
 def login():
+    """ Function that checks if the user login credentials
+    already exist in the database to allow acces their profile.
+    The function sends flash info to the user if the 
+    password or username doesn't match or exist """
     if request.method == "POST":
         # to check if the username already exists in the database
         existing_user = mongo.db.users.find_one(
@@ -90,7 +98,9 @@ def login():
 
 @app.route("/profile/<username>", methods=["GET", "POST"])
 def profile(username):
-    # to get the session user's username from the database
+    """ Function to get the session user's username 
+    from the database which will display at the top 
+    of the users profile page """
     username = mongo.db.users.find_one(
         {"username": session["user"]})["username"]
 
@@ -102,7 +112,8 @@ def profile(username):
 
 @app.route("/logout")
 def logout():
-    # to remove the user from the session cookie
+    """ Function to remove the user from the session
+    cookie/log out """
     flash("You have been logged out")
     session.pop("user")
     return redirect(url_for("login"))
@@ -110,12 +121,17 @@ def logout():
 
 @app.route("/get_recipes")
 def get_recipes():
+    """ Function to retrieve all recipes from the database
+    and display them on the recipes page """
     recipes = list(mongo.db.recipes.find())
     return render_template("recipe_list.html", recipes=recipes)
 
 
 @app.route("/search", methods=["GET", "POST"])
 def search():
+    """ Function that retrieves queries sent by
+    user from the database and displays the results
+    on the recipes page """
     query = request.form.get("query")
     recipes = list(mongo.db.recipes.find({"$text": {"$search": query}}))
     return render_template("recipe_list.html", recipes=recipes)
@@ -123,6 +139,9 @@ def search():
 
 @app.route("/add_recipe", methods=["GET", "POST"])
 def add_recipe():
+    """ Function that sends the new recipe data the 
+    user enters to the database and displays the recipe
+    on the recipe page """
     if request.method == "POST":
         recipe = {
             "recipe_type": request.form.get("recipe_type"),
@@ -142,6 +161,9 @@ def add_recipe():
 
 @app.route("/edit_recipe/<recipe_id>", methods=["GET", "POST"])
 def edit_recipe(recipe_id):
+    """ Function that sends the updated recipe data the user 
+    enters to the database and displays the udpated recipe 
+    on the recipe page """
     if request.method == "POST":
         update_recipe = {
             "recipe_type": request.form.get("recipe_type"),
@@ -162,6 +184,8 @@ def edit_recipe(recipe_id):
 
 @app.route("/delete_recipe/<recipe_id>")
 def delete_recipe(recipe_id):
+    """ Function that removes the selected recipe from 
+    the database and the recipe page """
     mongo.db.recipes.remove({"_id": ObjectId(recipe_id)})
     flash("Your recipe was successfully deleted")
     return redirect(url_for("get_recipes"))
@@ -169,12 +193,17 @@ def delete_recipe(recipe_id):
 
 @app.route("/get_types")
 def get_types():
+    """ Function to retrieve all recipe types from the database
+    and display them on the recipe types page """
     recipe_type = list(mongo.db.recipe_type.find().sort("recipe_type", 1))
     return render_template("recipe_types.html", recipe_type=recipe_type)
 
 
 @app.route("/add_type", methods=["GET", "POST"])
 def add_type():
+    """ Function that sends the new recipe type data 
+    the admin user enters to the database and displays 
+    the recipe type on the recipe type page """
     if request.method == "POST":
         recipe_type = {
             "recipe_type": request.form.get("recipe_type")
@@ -188,6 +217,9 @@ def add_type():
 
 @app.route("/edit_type/<type_id>", methods=["GET", "POST"])
 def edit_type(type_id):
+    """ Function that sends the updated recipe type data 
+    the admin user enters to the database and displays 
+    the updated recipe type on the recipe type page """
     if request.method == "POST":
         submit = {
             "recipe_type": request.form.get("recipe_type")
@@ -202,6 +234,8 @@ def edit_type(type_id):
 
 @app.route("/delete_type/<type_id>")
 def delete_type(type_id):
+    """ Function that removes the selected recipe 
+    type from the database and the recipe type page """
     mongo.db.recipe_type.remove({"_id": ObjectId(type_id)})
     flash("Recipe Type Successfully Deleted")
     return redirect(url_for("get_types"))
