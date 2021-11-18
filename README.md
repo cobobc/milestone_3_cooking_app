@@ -259,13 +259,13 @@ The features throughout the site are mininal text, larger text and clear buttons
 
 1.  Complete tests for user goals.
 
-1.  Run all pages through the [W3C HTML Validator](https://validator.w3.org/).
+1.  Run all HTML pages through the [W3C HTML Validator](https://validator.w3.org/).
 
-1.  Run all pages through the [W3C CSS Validator](http://www.css-validator.org/).
+1.  Run all CSS files through the [W3C CSS Validator](http://www.css-validator.org/).
 
 1.  Run all .js files through the [JShint](https://jshint.com/) validator.
 
-1.  Run all python files....
+1.  Run all python files through [PEP8 online](http://pep8online.com/)
 
 1.  Run a lighthouse test for performance.
 
@@ -273,6 +273,28 @@ The features throughout the site are mininal text, larger text and clear buttons
 ### Test Results
 
 #### Validation Results
+
+1.  Add Recipe
+
+    *   The first child option element of a select element with a required attribute, and without a multiple attribute, and without a size attribute whose value is greater than 1, must have either an empty value attribute, or must have no text content. Consider either adding a placeholder option label, or adding a size attribute with a value equal to the number of option elements. = I added an empty value
+
+    *   The aria-describedby attribute must point to an element in the same document. = changed the aria-describedby attribute to recipe_name to match for element in the label
+
+
+1.  Recipe Page
+
+    *   Duplicate ID accordionExample.
+    *   Duplicate ID headingOne.
+    *   Duplicate ID collapseOne.
+    *   Duplicate ID headingTwo.
+    *   Duplicate ID collapseTwo.
+
+    These errors repeat depending on how many recipes are store in the data base. Trying to imlement the loop counter id.
+
+1.  Add new category page
+
+    *   The aria-describedby attribute must point to an element in the same document. = changed the aria-describedby attribute to recipe_type to match for element in the label
+
 
 The HTML, CSS and JavaScript validations produced 0 errors.
 

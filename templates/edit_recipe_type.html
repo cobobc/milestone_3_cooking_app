@@ -13,14 +13,14 @@
         <div class="mb-3">
             <label for="recipe_type" class="form-label">Recipe Type</label>
             <input type="text" value="{{ type.recipe_type }}" name="recipe_type" class="form-control validate" id="recipe_type" 
-                maxlength="25" aria-describedby="recipeHelp" required>
+                maxlength="25" aria-describedby="recipe_type" required>
         </div>
         <!-- Submit and cancel button -->
         <div class="edit-add-type">
             <div class="edit-add-div">
                 <a href="{{ url_for('get_types') }}" class="btn btn-primary">Cancel</a>
                 <button type="submit" class="btn btn-primary">
-                    Edit Recipe Type
+                    Edit Category
                 </button>
             </div>
         </div>

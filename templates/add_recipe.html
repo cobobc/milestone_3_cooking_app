@@ -23,7 +23,7 @@
             <div class="mb-3">
                 <label for="recipe_type">Recipe Category</label>
                 <select class="form-select validate" aria-label="Default select example" id="recipe_type" name="recipe_type" required>
-                    <option>Choose Category</option>
+                    <option value="">Choose Category</option>
                     {% for recipe in recipe_type %}
                         <option value="{{ recipe.recipe_type }}">{{ recipe.recipe_type }}</option>
                     {% endfor %}
@@ -33,7 +33,7 @@
             <div class="mb-3">
                 <label for="recipe_name" class="form-label">Recipe Name</label>
                 <input type="text" name="recipe_name" class="form-control validate" id="recipe_name"
-                    aria-describedby="recipeHelp" required>
+                    aria-describedby="recipe_name" required>
             </div>
             <!-- Cooking Time -->
             <div class="mb-3">
