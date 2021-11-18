@@ -2,13 +2,13 @@
 
 ## Purpose 
 
-The purpose of this site is to complete the third Milestone Project for the Code Institute's Full Stack Developer course and can can be found [here](https://cobobc.github.io/milestone_project_2/).
+The purpose of this site is to complete the third Milestone Project for the Code Institute's Full Stack Developer course and can can be found [here](https://milestone-3-cooking-app.herokuapp.com/).
 
 ## Cookbook Website
 
-![TTT site desktop overview](assets/images/read_me/ttt_home_desktop.png)
+![Cookbook desktop overview](static/assets/img/readme_desktop.png)
 
-![TTT site mobile overview](assets/images/read_me/ttt_home_mobile.png)
+![Cookbook mobile overview](static/assets/img/readme_mobile.png)
 
 Ciaran O'Brien has been requested to create a cook book app which allows users to create and manage a their own cooking recipes. The app will allows users to create a profile in which they can store their favourite recipes. Users will be able to view other user recipes too. An administation user will be able to do everything a regular user can do but will also have the capacity to create and manage the recipe categories the regular users choose.
 
@@ -59,12 +59,11 @@ The admin user wants the following:
 
 #### Colour Scheme
 
-The main colours used are #009170 (green) and #000 (white). The green is a common colour associated with golf.
-For the special quiz pages a #003399 (blue) and a #FFCC00 (yellow) are used. These colours are that of the EU flag and the European Ryder Cup team.
+The main colours used are #9de3c5 (light green), #000 (white), and #3a4242 (slate). The green was chosen for its association with vegatables and the light green gives a ligth welcome feel. The white and slate are to give nice contrasts.
 
 #### Font
 
-The **Rubik** font is used through the whole app.
+The **Cairo** font is used through the whole app.
 
 #### Imagery
 
@@ -72,7 +71,7 @@ The images used in the app are sourced from google images and was granted permis
 
 #### Wireframes
 
-For complete wireframes see this [PDF](assets/images/read_me/Wireframes_m2.pdf).
+For complete wireframes see this [PDF](static/assets/img/wireframes/wireframes_milestone_3.pdf).
 
 
 ### Limitations
@@ -228,7 +227,7 @@ The features throughout the site are mininal text, larger text and clear buttons
 
 *   [RandomKeyge](https://randomkeygen.com/) - used to create the secret key variable in the env.py file
 
-*   [Heroku](https://id.heroku.com/login) -  used to ????????
+*   [Heroku](https://id.heroku.com/login) -  used to deploy app
 
 *   [EmailJS](https://www.emailjs.com/) - used in conjuction with JS to allow the website to send email to the user.
 
@@ -236,11 +235,11 @@ The features throughout the site are mininal text, larger text and clear buttons
 
 *   [Bootstrap](https://getbootstrap.com/) - used throughout the site for layout and styling. 
 
-*   [Google Fonts](https://fonts.google.com/) - provided the *Enriqueta* font used throughout the website.
+*   [Google Fonts](https://fonts.google.com/) - provided the *Cairo* font used throughout the website.
 
 *   [Font Awesome](https://fontawesome.com/) - provided the scocial media icons used in the Footer.
 
-*   [Google Chrome Developer Tools](https://developer.chrome.com/docs/devtools/open/) - used to inpect each page, debug and mostly to test different CSS styles.
+*   [Google Chrome Developer Tools](https://developer.chrome.com/docs/devtools/open/) - used to inpect each page, debug, lighthouse test and test different CSS styles.
 
 *   [GitHub](https://github.com/) - hosting site to store the websites source code and Git pages used to deploy the live site.
 
@@ -274,29 +273,70 @@ The features throughout the site are mininal text, larger text and clear buttons
 
 #### Validation Results
 
-1.  Add Recipe
+##### HTML Files
 
-    *   The first child option element of a select element with a required attribute, and without a multiple attribute, and without a size attribute whose value is greater than 1, must have either an empty value attribute, or must have no text content. Consider either adding a placeholder option label, or adding a size attribute with a value equal to the number of option elements. = I added an empty value
+1.  add_recipe.html
 
-    *   The aria-describedby attribute must point to an element in the same document. = changed the aria-describedby attribute to recipe_name to match for element in the label
+    *   **ERROR:** The first child option element of a select element with a required attribute, and without a multiple attribute, and without a size attribute whose value is greater than 1, must have either an empty value attribute, or must have no text content. Consider either adding a placeholder option label, or adding a size attribute with a value equal to the number of option elements.
 
+        *   **Fix:** Added empty value attribute to the first child option element.
 
-1.  Recipe Page
+    *   **ERROR:** The aria-describedby attribute must point to an element in the same document. 
 
-    *   Duplicate ID accordionExample.
-    *   Duplicate ID headingOne.
-    *   Duplicate ID collapseOne.
-    *   Duplicate ID headingTwo.
-    *   Duplicate ID collapseTwo.
-
-    These errors repeat depending on how many recipes are store in the data base. Trying to imlement the loop counter id.
-
-1.  Add new category page
-
-    *   The aria-describedby attribute must point to an element in the same document. = changed the aria-describedby attribute to recipe_type to match for element in the label
+        *   **Fix:** Updated the aria-describedby attribute to recipe_name to match for element in the label.
 
 
-The HTML, CSS and JavaScript validations produced 0 errors.
+1.  recipe_list.html
+
+    *   **ERROR:** Duplicate ID accordionExample.
+    *   **ERROR:** Duplicate ID headingOne.
+    *   **ERROR:** Duplicate ID collapseOne.
+    *   **ERROR:** Duplicate ID headingTwo.
+    *   **ERROR:** Duplicate ID collapseTwo.
+
+    These errors repeat depending on how many recipes are store in the data base. 
+    
+    **NOTE/FIX** The errors do not appear if you run the validation for 1 card that contain the accordians. The backend is creating more cards/recipes so is there for duplicating the IDs. Attempting to imlement a loop counter id.
+
+1.  add_recipe_type.html
+
+    *   **ERROR:** The aria-describedby attribute must point to an element in the same document.
+
+        *   **Fix:** Updated the aria-describedby attribute to recipe_type to match for element in the label.
+
+
+##### Python (app.py) 
+
+1.  Line 79	 col 5	continuation line with same indent as next logical line
+
+    *   **Fix:** Indented lines 79-84 by one.
+
+1.  Line 182 line too long (86 > 79 characters)
+
+    *   **Fix:** Put half the line indented on the next line
+
+Python errors fixed and is producing 0 errors.
+
+##### CSS
+
+The CSS validations produced 0 errors.
+
+*   ![CSS Validation Result](static/assets/img/testing/CSS_validation_result.png)
+
+##### JaveScript Files
+
+JavaScript validations produced 0 errors.
+
+##### EmailJS
+
+During testing of EmailJS (the emails sent upon user registration), it must be noted that there were occasional faults i.e. users successfully registered but did not receive the welcome email. The issue could be linked with the type email account i.e. hotmail, gmail, etc. For example, while testing EmailJS in a mentor meeting (Daisy Mc Girr), she registered an account with a gmail account and did not received a welcome email. She then registered with an outlook account and received the welcome email. Please note this while assessing this app.
+
+Please see the attached screenshots of successful welcome emails received upon registration.
+
+*   ![EmailJS Welcome email example 1](static/assets/img/testing/EmailJS_Daisy.png)
+*   ![EmailJS Welcome email example 2](static/assets/img/testing/EmailJS_Oliver.jpg)
+*   ![EmailJS Welcome email example 3](static/assets/img/testing/EmailJS_cob.png)
+
 
 #### User Goal Results
 
@@ -357,15 +397,16 @@ The HTML, CSS and JavaScript validations produced 0 errors.
 
 See the following lighthouse test results:
 
-![Lighthouse mobile results](assets/images/lighthouse/lighthouse_test_mobile.png) \
+![Lighthouse mobile results](static/assets/img/testing/Lighthouse_test_mobile.png) \
 **Mobile test result**
 
 
-![Lighthouse desktop results](assets/images/lighthouse/lighthouse_test_desktop.png) \
+![Lighthouse desktop results](static/assets/img/testing/Lighthouse_test_desktop.png) \
 **Desktop test result**
 
 
-These test results indicate that the site peforms very overall. It also shows that Accessibily and Best Practices could improved to further optimise the sites performance.
+These test results indicate that the site peforms very well overall. It also shows that the Performance to could be improved a lot for mobile.
+
 Due to the time constaints of this project it is not feasible to act further on this. In a normal working situation time would be taken to optimise performance.
 
 
@@ -390,16 +431,41 @@ The following commands were used throughout the project:
 *   git commit -m "commit message explaining the updates" - This command was used to to commit changes to the local repository.
 *   git push - This command is used to push all commited changes to the GitHub repository.
 
-### Using Github Pages
+### Deployment to Heroku
 
-1.  Navigate to the GitHub [Repository](https://github.com/cobobc/milestone_project_2).
-1.  Select the **Settings** Tab.
-1.  Scroll Down to the Git Hub Pages Heading.
-1.  Select **Main Branch** as the source.
-1.  Select the **Save button**.
-1.  Select on the link to go to the live deployed page.
+1.  Creat application:
+
+    1. Navigate to Heroku.com and login.
+    1. Select the **new** button.
+    1. Select **create new app**.
+    1. Enter the app name.
+    1. Select the region.
+
+1.  Set up connection to Github Repository:
+
+    1. Select the **Deploy tab > GitHub > Connect to GitHub**.
+    1. Enter the repository name for the project and select **search**.
+    1. When the repo has been found, select the **connect** button.
+
+1.  Set environment variables:
+
+    1. Select the **Settings** tab.
+    1. Select the Reveal Config Vars button and add the following keys:
+        *   IP: 0.0.0.0
+        *   PORT: 5000
+        *   SECRET_KEY: 
+        *   MONGO_URI:
+        *   MONGO_DBNAME
+
+1.  Enable automatic deployment:
+
+    1. Select the **Deploy** tab.
+    1. In the Automatic deploys section, choose the branch you want to deploy.
+    1. Select **Enable Automation Deploys**.
 
 ### Run Locally
+
+**Note:** The project will not run locally with database connections unless the user sets up an env.py file configuring IP, PORT, MONGO_URI, MONGO_DBNAME and SECRET_KEY.
 
 1.  Navigate to the GitHub [Repository](https://github.com/cobobc/milestone_project_2).
 1.  Select the Code drop down menu.
@@ -417,20 +483,32 @@ Password: admin123
 
 ### Code
 
-[W3Schools](https://www.w3schools.com/) helped throughout the project with general element and attribute uncertainties.
+*   [W3Schools](https://www.w3schools.com/) helped throughout the project with general element and attribute uncertainties.
+
+*   [StartBootstrap](https://startbootstrap.com/theme/clean-blog) - used this as the source code for the theme of the app. Includes JS for interactive nav bar use.
+
+*   [Stack Overflow](https://stackoverflow.com/questions/9139075/how-to-show-a-confirm-message-before-delete) - used to help create the pop up confirmation alerts when the user deletes data or tries to log out.
+
+*   Tim Nelson a Tutor at Code Institute code in the Flash Framework and mini project lesson helped give my project a great base to work off.
+
 
 ### Content 
 
-The contents of the quiz questions came from various sources - BBC Sport, Sky Sports Golf, the R&A and Joe.ie. Headings, titles and paragraphs were all wrote by Ciaran O'Brien.
+The contents of this app was all wrote by Ciaran O'Brien.
 
 ### Media 
 
-The large background images used are sourced from www.theindependent.ie and permission was granted to use for this project.
+Images were sourced from google images and permission was granted to use for this project.
 
 ### Acknowledgements
 
 I'd like to thank my mentor Spencer Barriball for his guidance, efficiency and positivity throughout my project.
+
+I'd like to thank my mentor Daisy McGirr who kindly stepped in to take my final project review as Spencer was on holidays. I am so thankful for her help.
+
 Thank you to Tim Nelson a Tutor at Code Institute whose teaching techniques helped me understand how to implement Python into a project. A lot of this project's code structing was sourced from Tim's amazing Mini Project and Flash Framework lessons.
+
 Thank you to Matt Rudge the Senior Product Developer at Code Institute for his lessons on implementing EmailJS into a project.
-Thanks to my fellow students on Slack for helping my link the js quiz code to the html and css code so that my quiz question could appear.
+
+Thanks to my fellow students on Slack for helping various accordian issues I had on the recipe page and with helping get the corect category to display when a user wants to edit a recipe.
 
