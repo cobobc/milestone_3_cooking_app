@@ -187,7 +187,7 @@ def delete_recipe(recipe_id):
     """ Function that removes the selected recipe from 
     the database and the recipe page """
     mongo.db.recipes.remove({"_id": ObjectId(recipe_id)})
-    flash("Your recipe was successfully deleted")
+    flash("Your recipe was deleted")
     return redirect(url_for("get_recipes"))
 
 
@@ -209,7 +209,7 @@ def add_type():
             "recipe_type": request.form.get("recipe_type")
         }
         mongo.db.recipe_type.insert_one(recipe_type)
-        flash("New Recipe Type Added")
+        flash("New Category Added")
         return redirect(url_for("get_types"))
 
     return render_template("add_recipe_type.html")
@@ -225,7 +225,7 @@ def edit_type(type_id):
             "recipe_type": request.form.get("recipe_type")
         }
         mongo.db.recipe_type.update({"_id": ObjectId(type_id)}, submit)
-        flash("Recipe Type Successfully Updated")
+        flash("Category Successfully Updated")
         return redirect(url_for("get_types"))
 
     type = mongo.db.recipe_type.find_one({"_id": ObjectId(type_id)})
@@ -237,7 +237,7 @@ def delete_type(type_id):
     """ Function that removes the selected recipe 
     type from the database and the recipe type page """
     mongo.db.recipe_type.remove({"_id": ObjectId(type_id)})
-    flash("Recipe Type Successfully Deleted")
+    flash("Category Deleted")
     return redirect(url_for("get_types"))
 
 

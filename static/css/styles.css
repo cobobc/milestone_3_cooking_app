@@ -609,7 +609,7 @@ progress {
 .img-thumbnail {
   padding: 0.25rem;
   background-color: #fff;
-  border: 1px solid #dee2e6;
+  border: .063rem solid #dee2e6;
   max-width: 100%;
   height: auto;
 }
@@ -4449,16 +4449,16 @@ textarea.form-control-lg {
 
 .flash-message {
   text-align: center;
-  margin-top: 20px;
-  margin-bottom: 20px;
+  margin-top: 1.563rem;
+  margin-bottom: 1.25rem;
 }
 
 .flash-heading {
-  color: #9de3c5;
+  color: #3a4242;
 }
 
 .flash-hr {
-  color: #9de3c5;
+  color: #3a4242;
   width: 50%;
   margin: auto;
   text-align: center;
@@ -4476,8 +4476,8 @@ textarea.form-control-lg {
   background-color: #fff;
   background-clip: border-box;
   border: 1px solid #0085a1;
-  border-radius: 15px;
-  margin: 15px;
+  border-radius: .938rem;
+  margin: .938rem;
 }
 
 
@@ -4563,8 +4563,8 @@ textarea.form-control-lg {
 .card-img-top,
 .card-img-bottom {
   width: 100%;
-  border-radius: 50px;
-  margin-top: 15px;
+  border-radius: 3.125rem;
+  margin-top: .938rem;
 }
 
 .card-group > .card {
@@ -4596,9 +4596,9 @@ textarea.form-control-lg {
   text-align: left;
   background-color: #fff;
   border: 1px solid;
-  border-radius: 5px;
-  margin-top: 5px;
-  margin-bottom: 5px;
+  border-radius: .313rem;
+  margin-top: .313rem;
+  margin-bottom: .313rem;
   overflow-anchor: none;
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out, border-radius 0.15s ease;
 }
@@ -11153,14 +11153,14 @@ blockquote {
 footer {
   padding-top: 3rem;
   padding-bottom: 3rem;
-  padding-top: 15px;
-  padding-bottom: 15px;
+  padding-top: .938rem;
+  padding-bottom: .938rem;
   background-color: #9de3c5;
 }
 
 .no-gutter {
-  margin-right: 0px;
-  margin-left: 0px;
+  margin-right: 0;
+  margin-left: 0;
 }
 
 .fa-circle {
@@ -11220,8 +11220,8 @@ footer {
 /*--------------------------------------Title in index page */
 
 .title-div {
-  margin-top: 25px;
-  margin-bottom: 25px;
+  margin-top: 1.563rem;
+  margin-bottom: 1.563rem;
 }
 
 .site-header {
@@ -11233,15 +11233,17 @@ footer {
 
 .site-header h1 {
   font-size: 3.5rem;
+  color: #3a4242;
 }
 
 .site-header span {
   font-size: 1.5rem;
+  color: #3a4242;
 }
 
 .index-text {
-  margin-top: 30px;
-  margin-bottom: 30px;
+  margin-top: 1.875rem;
+  margin-bottom: 1.875rem;
 }
 
 .index-description {
@@ -11251,16 +11253,18 @@ footer {
 }
 
 .index-description h3 {
-  margin-top: 20px;
-  margin-bottom: 20px;
+  margin-top: 1.25rem;
+  margin-bottom: 1.25rem;
+  color: #3a4242;
 }
 
 .index-description p {
-  margin-bottom: 20px;
+  margin-bottom: 1.25rem;
+  color: #3a4242;
 }
 
 .register-button {
-  margin-bottom: 50px;
+  margin-bottom: 3.125rem;
 }
 
 .register-button a {
@@ -11268,7 +11272,7 @@ footer {
   margin: auto;
   text-align: center;
   justify-content: center;
-  border-radius: 20px;
+  border-radius: 1.25rem;
   font-size: 1.4rem;
 }
 
@@ -11278,29 +11282,23 @@ footer {
   margin: auto;
   text-align: center;
   justify-content: center;
-  margin-bottom: 50px;
-}
-
-.page-headers {
-  text-align: center;
-  margin-top: 40px;
-  margin-bottom: 40px;
+  margin-bottom: 3.125rem;
 }
 
 /*----------------------------------------------------------------------------------Recipe List Page */
 
 .search-recipe {
-  margin-top: 50px;
-  margin-bottom: 50px;
+  margin-top: 3.125rem;
+  margin-bottom: 3.125rem;
 }
 
 .search-box {
-  border: 1px solid;
+  border: .063rem solid;
   width: 70%;
   margin: auto;
   text-align: center;
   justify-content: center;
-  border-radius: 10px;
+  border-radius: .625rem;
 }
 
 .search-button-div {
@@ -11310,13 +11308,13 @@ footer {
 }
 
 .search-button-div a {
-  margin-top: 20px;
-  border-radius: 20px;
+  margin-top: 1.25rem;
+  border-radius: 1.25rem;
 }
 
 .search-button-div button {
-  margin-top: 20px;
-  border-radius: 20px;
+  margin-top: 1.25rem;
+  border-radius: 1.25rem;
 }
 
 .recipe-headings {
@@ -11332,12 +11330,12 @@ footer {
 }
 
 .recipe-list-button {
-  border-radius: 5px;
+  border-radius: .313rem;
 }
 
 .recipe-list {
-  margin-top: 10px;
-  margin-bottom: 60px;
+  margin-top: .625rem;
+  margin-bottom: 3.75rem;
 }
 
 .recipe-cards {
@@ -11347,21 +11345,21 @@ footer {
 }
 
 .cooking-time {
-  margin-top: 15px;
-  margin-bottom: 10px;
+  margin-top: .938rem;
+  margin-bottom: .625rem;
 }
 
 .created-by {
-  margin-top: 10px;
-  margin-bottom: 20px;
+  margin-top: .625rem;
+  margin-bottom: 1.25rem;
 }
 
 /*----------------------------------------------------------------Add Recipe */
 
 .form-box {
-  padding-left: 25px;
-  padding-right: 25px;
-  margin-bottom: 30px;
+  padding-left: 1.563rem;
+  padding-right: 1.563rem;
+  margin-bottom: 1.875rem;
 }
 
 .add-recipe {
@@ -11371,14 +11369,14 @@ footer {
 }
 
 .add-recipe-button {
-  border-radius: 10px;
+  border-radius: .625rem;
 }
 
 /*--------------------------------------------------------------Manage recipe types */
 
 .add-type {
-  margin-top: 10px;
-  margin-bottom: 10px;
+  margin-top: .625rem;
+  margin-bottom: 3.125rem;
 }
 
 .add-new-recipe-type {
@@ -11388,12 +11386,12 @@ footer {
 }
 
 .add-new-recipe-type a {
-  border-radius: 10px;
+  border-radius: .625rem;
 }
 
 .manage-types {
-  margin-top: 50px;
-  margin-bottom: 50px;
+  margin-top: 1.125rem;
+  margin-bottom: 3.125rem;
 }
 
 .manage-recipe-type {
@@ -11403,14 +11401,14 @@ footer {
 }
 
 .recipe-type-button {
-  border-radius: 50px;
+  border-radius: 3.125rem;
 }
 
 /*---------------------------------------------------edit and add recipe type */
 
 .edit-add-type {
-  margin-top: 10px;
-  margin-bottom: 20px;
+  margin-top: .25rem;
+  margin-bottom: 3.25rem;
 }
 
 .edit-add-div {
@@ -11420,19 +11418,19 @@ footer {
 }
 
 .edit-add-div a {
-  border-radius: 10px;
+  border-radius: .625rem;
 }
 
 .edit-add-div button {
-  border-radius: 10px;
+  border-radius: .625rem;
 }
 
 /*-------------------------------------------------------Register  */
 
 .user-card {
   border: none;
-  padding-left: 25px;
-  padding-right: 25px;
+  padding-left: 1.563rem;
+  padding-right: 1.563rem;
 }
 
 .user-btn-div {
@@ -11442,16 +11440,40 @@ footer {
 }
 
 .user-button {
-  margin-top: 40px;
-  margin-bottom: 10px;
+  margin-top: 2.5rem;
+  margin-bottom: .625rem;
 }
 
 .user-button button {
-  border-radius: 10px;
+  border-radius: .625rem;
 }
 
 .user-account {
   margin: auto;
   text-align: center;
   justify-content: center;
+}
+
+/*---------------------------------------------------------Page heading and descriptions */
+
+.page-headers {
+  text-align: center;
+  margin-top: 2.5rem;
+  margin-bottom: 1.25rem;
+}
+
+.page-headers h2 {
+  color: #3a4242;
+}
+
+.page-descriptions {
+  margin: auto;
+  text-align: center;
+  justify-content: center;
+}
+
+.page-descriptions p {
+  color: #3a4242;
+  width: 80%;
+  text-align: center;
 }

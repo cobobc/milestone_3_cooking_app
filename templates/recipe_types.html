@@ -4,17 +4,15 @@
     <!-------------------------------------------------------------------------------- Page Header-->
     <div class="row page-headers">
         <h2>
-            Manage Recipe Types
+            Manage Categories
         </h2>
     </div>
-
-    <!-- Button link to add new recipe type page -->
-    <div class="add-type">
-        <div class="add-new-recipe-type">
-            <a href="{{ url_for('add_type') }}" class="btn btn-primary">Add Recipe Type</a>
-        </div>
+    <div class="row page-descriptions">
+        <p>
+            Manage the current list of recipe categories here. Edit, delete or a new category.
+        </p>
     </div>
-    <!-- Recipe types -->
+    <!----------------------------------- Recipe Categories -->
     <div class="manage-types">
         <div class="row manage-recipe-type">
             {% for type in recipe_type %}
@@ -31,6 +29,12 @@
                     </div>
                 </div>
             {% endfor %}
+        </div>
+    </div>
+    <!------------------------------------------- Button link to add new recipe type page -->
+    <div class="add-type">
+        <div class="add-new-recipe-type">
+            <a href="{{ url_for('add_type') }}" class="btn btn-primary">Add New Recipe Category</a>
         </div>
     </div>
 

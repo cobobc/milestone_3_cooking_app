@@ -4,23 +4,22 @@
     <!-------------------------------------------------------------------------------- Page Header-->
     <div class="row page-headers">
         <h2>
-            Add Recipe Type
+            Add New Category
         </h2>
     </div>
-
     <!------------------------------------------------------------ Form to add recipe type -->
     <form method="POST" action="{{ url_for('add_type') }}">
         <!-- Recipe Type -->
         <div class="mb-3">
             <label for="recipe_type" class="form-label">Recipe Type</label>
             <input type="text" name="recipe_type" class="form-control validate" id="recipe_type" 
-                maxlength="40" aria-describedby="recipeHelp" placeholder="Type a new recipe type here" required>
+                maxlength="40" aria-describedby="recipeHelp" placeholder="Type a new recipe category here" required>
         </div>
         <!-- Submit Button -->
         <div class="edit-add-type">
             <div class="edit-add-div">
                 <button type="submit" class="btn btn-primary">
-                    Add Recipe Type
+                    Add Category
                 </button>
             </div>
         </div>
