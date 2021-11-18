@@ -477,10 +477,6 @@ The following commands were used throughout the project:
 1.  Use the 'git clone' command in terminal followed by the copied git URL.
 1.  A clone of the project will be created locally on your machine.
 
-## Admin Credentials
-
-Username: Admin
-Password: admin123
 
 ## Credits
 

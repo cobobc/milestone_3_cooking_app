@@ -11364,6 +11364,7 @@ footer {
 .created-by {
   margin-top: .625rem;
   margin-bottom: 1.25rem;
+  font-style: italic;
 }
 
 /*----------------------------------------------------------------Add Recipe */
