@@ -242,6 +242,22 @@ def delete_type(type_id):
     return redirect(url_for("get_types"))
 
 
+@app.errorhandler(404)
+def not_found(error):
+    """
+    Function to handle 404 errors
+    """
+    return render_template('404.html', error=error), 404
+
+
+@app.errorhandler(500)
+def internal_server_error(error):
+    """
+    Function to handle 500 errors
+    """
+    return render_template('500.html', error=error), 500
+
+
 if __name__ == "__main__":
     app.run(
         host=os.environ.get("IP", "0.0.0.0"),

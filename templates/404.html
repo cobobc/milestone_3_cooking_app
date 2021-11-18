@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block page %}
+
+    <div class="row error-message">
+        <h3>Oops! Looks like the page doesn't exist anymore</h3>
+        <a href="{{ url_for('index') }}"><p>Click Here</a> to navigate back to the Home Page</p>
+    </div>
+
+{% endblock %}

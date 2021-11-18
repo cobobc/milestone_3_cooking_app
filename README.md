@@ -201,7 +201,10 @@ The features throughout the site are mininal text, larger text and clear buttons
         *   When an admin user has edited a recipe category (top of Recipes page) - **Recipe Type Successfully Updated**
         *   When an admin user has deleted a recipe category (top of Recipes page) - **Recipe Type Successfully Deleted**
     *   If a user refreshes the page on which a flash message is displayed, the flash message with disappear. 
-        
+
+*   Error 404 and Error 500 pages
+
+    *   These pages were created to inform the user the a certain page doesn't exist or that something went wrong. The page provides a link so the user can navigate back to the homepage seemlessly.
 
 
 ### Features Left to Implement
@@ -296,7 +299,9 @@ The features throughout the site are mininal text, larger text and clear buttons
 
     These errors repeat depending on how many recipes are store in the data base. 
     
-    **NOTE/FIX** The errors do not appear if you run the validation for 1 card that contain the accordians. The backend is creating more cards/recipes so is there for duplicating the IDs. Attempting to imlement a loop counter id.
+    **NOTE/FIX** The errors do not appear if you run the validation for 1 card that contain the accordians. The backend is creating more cards/recipes so is there for duplicating the IDs. 
+    
+    To fix the error an attempt was made to impliment a loop counter id to contatonate accordian variable to generate uniique IDs for each. Due to time constraints for this project resources could not be put into solving this. The user doesn't suffer greatly for this.
 
 1.  add_recipe_type.html
 
@@ -467,7 +472,7 @@ The following commands were used throughout the project:
 
 **Note:** The project will not run locally with database connections unless the user sets up an env.py file configuring IP, PORT, MONGO_URI, MONGO_DBNAME and SECRET_KEY.
 
-1.  Navigate to the GitHub [Repository](https://github.com/cobobc/milestone_project_2).
+1.  Navigate to the GitHub [Repository](https://github.com/cobobc/milestone_3_cooking_app).
 1.  Select the Code drop down menu.
 1.  Either Download the ZIP file, unpackage locally and open with IDE (This route ends here) OR Copy Git URL from the HTTPS dialogue box.
 1.  Open your developement editor of choice and open a terminal window in a directory of your choice.
@@ -488,6 +493,10 @@ Password: admin123
 *   [StartBootstrap](https://startbootstrap.com/theme/clean-blog) - used this as the source code for the theme of the app. Includes JS for interactive nav bar use.
 
 *   [Stack Overflow](https://stackoverflow.com/questions/9139075/how-to-show-a-confirm-message-before-delete) - used to help create the pop up confirmation alerts when the user deletes data or tries to log out.
+
+*   [GeeksforGeeks](https://www.geeksforgeeks.org/python-404-error-handling-in-flask/) - used to help with creating error 404 page for html and python.
+
+*   [Handling Application Errors](https://flask.palletsprojects.com/en/2.0.x/errorhandling/) - used to help with creating error 500 page for html and python.
 
 *   Tim Nelson a Tutor at Code Institute code in the Flash Framework and mini project lesson helped give my project a great base to work off.
 
@@ -512,3 +521,4 @@ Thank you to Matt Rudge the Senior Product Developer at Code Institute for his l
 
 Thanks to my fellow students on Slack for helping various accordian issues I had on the recipe page and with helping get the corect category to display when a user wants to edit a recipe.
 
+Thank you to my tester friends Fionn and Ollie who allowed me to contsantly test my EmailJS functionality with their email addresses.

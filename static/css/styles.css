@@ -11477,3 +11477,16 @@ footer {
   width: 80%;
   text-align: center;
 }
+
+/*------------------------------- error pages*/
+
+.error-message {
+  margin: auto;
+  text-align: center;
+  justify-content: center;
+}
+
+.error-message h3 {
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}
