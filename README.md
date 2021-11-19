@@ -86,9 +86,9 @@ The features throughout the site are mininal text, larger text and clear buttons
 
     *   Featured on every page, but depending on the user can differ in the following scenarios:
         1.  A user that has not registered or logged in - the nav bar contains links to the home, register and login pages.
-        1.  A user that has register and is logged in - the nav bar contains links to the home, profile, add recipe and recipes pages, and a link to log out. 
-        1.  An admin user - the nav bar contains links to the home, profile, add recipe, recipes and manage recipe categories pages, and a link to log out.
-            *   If the user selects the Log Out option on the nav bar, a pop up will appear to confirm the log out. If the user confirms, the user in navigated to the Login page.
+        1.  A user that has registered and is logged in - the nav bar contains links to the home, profile, add recipe and recipes pages, and a link to log out. 
+        1.  An admin user - the nav bar contains links to the home, profile, add recipe, recipes, manage recipe categories pages, and a link to log out.
+            *   If the user selects the Log Out option on the nav bar, a pop up will appear to confirm the log out. If the user confirms, the user in navigated to the Login page (desktop and tablet only).
         
     *   The title in the nav bar provides the user with a link back to the home page. 
     *   The navigation options becomes contained in a responsive Bootstrap burger icon for tablet and mobile devices that provides the page option in a dropdown form. 
@@ -101,12 +101,12 @@ The features throughout the site are mininal text, larger text and clear buttons
 *   Home page
 
     *   Provies a friendly/inviting cooking image with the Cookbook title and a one line summary of the site over the image.
-    *   Underneath the image there is a jumbtron that provides the user with more detail about what the app offers. 
+    *   Underneath the image there is a text that provides the user with more detail about what the app offers. 
 
 *   Register Page
 
     *   A header with short descriptive text on how to register.
-    *   The form is houses the required fields (username, email, and password) a user must enter to register.
+    *   The form houses the required fields (username, email, and password) a user must enter to register.
     *   A large register button makes it clear and easy to register.
     *   When the user the clicks the register button, the user is sent to their profile page, and their registration details are sent and stored in mongodb.
     *   When the user the clicks the register button, they will recieve an email welcoming them and affirming they have registered. This feature is via EmailJS funtionality embedded in the registration form.
@@ -115,7 +115,7 @@ The features throughout the site are mininal text, larger text and clear buttons
 *   Login Page
 
     *   A header with short descriptive text on how to log in.
-    *   The form is houses the required fields (username and password) a user must enter to log in.
+    *   The form houses the required fields (username and password) a user must enter to log in.
     *   A large log in button makes it clear and easy to login.
     *   When the user the clicks the login button, the user is sent to their profile page.
     *   There is medium size text under the register button asking the user if they are new to the site and provides a link to the register page in case the user has mistakenly navigated to the log in page.
@@ -131,15 +131,15 @@ The features throughout the site are mininal text, larger text and clear buttons
     *   A header with short descriptive text informing the user about the recipes page. 
     *   The search bar is postioned near the top of the page so that if the user doesn't want to scroll down the page to find what they want, they can just type keywords of what they are looking for. The search functionality - when prompted - searches through the data within the created recipes. Validation is coded (max and min lengths, and pattern) into the search bar to protect against the potential of someone breaking the site.
     *   If the user has a successful search, they will be presented with the recipe(s) that match the search. The reset button gives the option to the user if they want to see all the recipes again.
-    *   All recipes are presented within cards. Within the cards is the recipe category as the main heading followed by the recipe name in a child heading. Underneath is two Bootstrap accordian components which house the ingredients and the cooking instructions respectively. The UX theory here is that if the user is using this app while cooking, they can open and close both accordians to suit their need. For example, It avoids the user having to scroll down through all of the ingredients to get to the cooking instructions. They can simply close the ingredients accordian and open only the cooking instructions.
+    *   All recipes are presented within cards. Within the cards is the recipe category as the main heading followed by the recipe name in a child heading. Underneath is two Bootstrap accordian components which house the ingredients and the cooking instructions respectively. The UX theory here is that if the user is using this app while cooking, they can open and close both accordians to suit their need. For example, to negate the user having to scroll down through all of the ingredients to get to the cooking instructions. They can simply close the ingredients accordian and open only the cooking instructions.
     *   If the recipe was not created by the current user, the remaining content in the card is the cooking time and user name who created the recipe. If the recipe was created by the current user, they will have optinon to edit or delete the recipe in button form. If the user selects **Delete**, they are presented with a pop up asking them to confirm deletion. If they confrim the deletion, the recipe is removed for the Recipes page and is also removed from the mongodb database. If the user selects **Edit**, they are brought to the edit recipe page.
-    *   Using the Bootstrap grid system three cards will appear on one row for the desktop. Two cards on one row for table, and one column for mobile.
+    *   Using the Bootstrap grid system three cards will appear on one row for the desktop. Two cards on one row for tablet, and one column for mobile.
 
 *   Add Recipe Page
 
     *   A header with short descriptive text on how to add recipe.
     *   An easy to use form with the following fields:
-        1.  Recipe category - this is a dropdown option. The user can choose from the different recipe categories. The categories and manged by an Admin account.
+        1.  Recipe category - this is a dropdown option. The user can choose from the different recipe categories. The categories are manged by an Admin account.
         1.  Recipe name - user types recipe name.
         1.  Cooking Time - user types cooking time.
         1.  Ingredients - user types ingredients.
@@ -156,24 +156,24 @@ The features throughout the site are mininal text, larger text and clear buttons
         1.  Ingredients - user can edit ingredients.
         1.  Cooking Instructions - user can edit cooking instructions.
     *   The user then selects **Edit**. This sends the user back to the Recipes pages with a message at the top of the page informing them that the recipe has been successfully updated. The updated recipe data is sent and stored in mongodb.  
-    *   If the user doesn't want to edit or just wants to navigate back to the REcipes page they can select the **Cancel** button.
+    *   If the user doesn't want to edit or just wants to navigate back to the Recipes page they can select the **Cancel** button.
   
-*   Manage Recipe Types Page
+*   Manage Recipe Category Page
 
-    *   A header with short descriptive text informing the user about how to manage the recipe categories. 
-    *   A large button to add new category is predominant on this page to provide no confusion on how to add. The button links to Add Recipe Category page.
+    *   A header with short descriptive text informing the user about how to manage the recipe categories.
     *   The categories are presented in card form with the name of the category and an edit and delete button.
     *   The user is brought to the Edit category page if they click the **Edit** button. If they choose the **Delete** button, a pop up requesting deletion confirmation. If they confrim the deletion, the category is removed for the Manage Recipe Category page and is also removed from the mongodb database.
+    *   A large button to add new category is predominant on this page to provide no confusion on how to add. The button links to Add Recipe Category page.
     *   Using the Bootstrap grid system four cards will appear on one row for the desktop. Two cards on one row for table, and one column for mobile.
 
-*   Add Recipe Types Page
+*   Add Recipe Category Page
 
     *   A header with short descriptive text on how to add a new recipe category.
     *   A simple form with one text input option for the admin user to type a new category.
     *   Validation is coded (max length) into the form to protect against the potential of someone breaking the site or accidently creating a jargon category.
     *   Large Add Category button is underneath the form to make it clear to click the button when done typing the new category. If the user selects the add new category button they will be naviagted back to the Manage Recipe Categories page. The new category data is sent and stored in mongodb.
 
-*   Edit Recipe Types Page
+*   Edit Recipe Category Page
 
     *   A header with short descriptive text on how to edit a recipe category.
     *   A simple form with one text input option for the admin user to edit the category. The category is prepopulated with the existing category the user wants to edit.
@@ -186,7 +186,7 @@ The features throughout the site are mininal text, larger text and clear buttons
     *   A heading with relevant information for the user appears (with a hr underneath to give spacing) in the following user interactions with the app:
         *   If a user trying to register enters a username that already exists (top of registration page) - **Oops! This username already exists**
         *   If a user trying to register enters an email that already exists (top of registration page) - **Oops! This email already exists**
-        *   If a user trying to register enters an email that already exists (top of profile page) - **You have successfully registered! Happy cooking!**
+        *   If a user successfully registers an account (top of profile page) - **You have successfully registered! Happy cooking!**
         *   If a returning user successfully logs in (top of the profile page) - **Welcome, {username}**
         *   If a returning user enters an incorrect password (top of the log in page) - **Incorrect Username and/or Password**
         *   If a returning user enters an incorrect username (top of the log in page) - **Incorrect Username and/or Password**
@@ -194,10 +194,10 @@ The features throughout the site are mininal text, larger text and clear buttons
         *   If a user has logged out (top of the log in page) - **You have been logged out**
         *   When a user has added a new recipe (top of Recipes page) - **Your recipe has been added**
         *   When a user has edited a recipe (top of Recipes page) - **Your recipe has been updated**
-        *   When a user has deleted a recipe (top of Recipes page) - **Your recipe was successfully deleted**
-        *   When an admin user has added a new recipe category (top of Recipes page) - **New Recipe Type Added**
-        *   When an admin user has edited a recipe category (top of Recipes page) - **Recipe Type Successfully Updated**
-        *   When an admin user has deleted a recipe category (top of Recipes page) - **Recipe Type Successfully Deleted**
+        *   When a user has deleted a recipe (top of Recipes page) - **Your recipe was deleted**
+        *   When an admin user has added a new recipe category (top of Recipes page) - **New Category Added**
+        *   When an admin user has edited a recipe category (top of Recipes page) - **Category Successfully Updated**
+        *   When an admin user has deleted a recipe category (top of Recipes page) - **Category Deleted**
     *   If a user refreshes the page on which a flash message is displayed, the flash message with disappear. 
 
 *   Error 404 and Error 500 pages
@@ -207,7 +207,7 @@ The features throughout the site are mininal text, larger text and clear buttons
 
 ### Features Left to Implement
 
-*   Popup aleart to confirm if the user wants to log out.
+*   A pop up visual describing the password criteria for registering when a user doesn't meet the criteria.
 
 
 ## Technologies Used
@@ -222,7 +222,7 @@ The features throughout the site are mininal text, larger text and clear buttons
 
 *   Flask - a web framework that provided the tools, libraries and technologies required to build the Cookbook app.
 
-*   [MongoDB](https://www.mongodb.com/) - used to store the users data.
+*   [MongoDB](https://www.mongodb.com/) - used to store and manage the users data.
 
 *   Werkzeug - used for user password security.
 
@@ -230,7 +230,7 @@ The features throughout the site are mininal text, larger text and clear buttons
 
 *   [Heroku](https://id.heroku.com/login) -  used to deploy app
 
-*   [EmailJS](https://www.emailjs.com/) - used in conjuction with JS to allow the website to send email to the user.
+*   [EmailJS](https://www.emailjs.com/) - used in conjuction with JS to allow the website to send email to the user upon registration.
 
 *   [StartBootstrap](https://startbootstrap.com/theme/clean-blog) - used this as the source code for the theme of the app. Includes JS for interactive nav bar use.
 
@@ -332,7 +332,7 @@ JavaScript validations produced 0 errors.
 
 ##### EmailJS
 
-During testing of EmailJS (the emails sent upon user registration), it must be noted that there were occasional faults i.e. users successfully registered but did not receive the welcome email. The issue could be linked with the type email account i.e. hotmail, gmail, etc. For example, while testing EmailJS in a mentor meeting (Daisy Mc Girr), she registered an account with a gmail account and did not received a welcome email. She then registered with an outlook account and received the welcome email. Please note this while assessing this app.
+During testing of EmailJS (the emails sent upon user registration), it must be noted that there were occasional faults i.e. users successfully registered but did not receive the welcome email. The issue could be linked with the type email account i.e. hotmail, gmail, etc. For example, while testing EmailJS in a mentor meeting (Daisy Mc Girr), she registered an account with a gmail account and did not received a welcome email. She then registered with an outlook account and received the welcome email. Please note this while assessing the app.
 
 Please see the attached screenshots of successful welcome emails received upon registration.
 
@@ -353,7 +353,7 @@ Please see the attached screenshots of successful welcome emails received upon r
 
 *   As a First Time user, I want to easily register a Cookbook account - Testing was performed on the registration form to verify that a user can register an account on this app.
 
-*   As a First Time user, I want to recieve an email that welcomes me and acknowledges that I have created an account - Testing was performed to verify that when a user create an account they recieve a personal email.
+*   As a First Time user, I want to recieve an email that welcomes me and acknowledges that I have created an account - Testing was performed to verify that when a user create an account they recieve a personal email. (NOTE: Please see the EmailJS results in the Validation Results section above).
 
 *   As a First Time user, I want to add a recipe - Testing was performed on the recipe form input fields and the add recipe buttons to ensure a user can create a recipe.
 
@@ -367,7 +367,7 @@ Please see the attached screenshots of successful welcome emails received upon r
 
 *   As a First Time user, I want to seemlessly navigate through the 6 pages of the site - Testing was performed on all navigation links to ensure the user can seemlessly navigate throughout the site.
 
-*   As a First Time user, I want to easily connect with Cookbook's social platforms - Testing was performed on the socail icon links in the footer to ensure that the user isnavigated to the chosen social media platform and that the link opens in a new tab to keep the user in the app allowing for seemless UX.
+*   As a First Time user, I want to easily connect with Cookbook's social platforms - Testing was performed on the socail icon links in the footer to ensure that the user is navigated to the chosen social media platform and that the link opens in a new tab to keep the user in the app allowing for seemless UX.
 
 *   As a First Time user, I want to log out of my account - Testing was performed on the Log Out link in the Navigation bar to enusre that the user can successfully log out, that when the link is selected a pop up appear asking the user to confirm that they want to logout (as to avoid an unwanted log out), and the upon a successful logout, the user is redirected back to the log in page.
 
@@ -385,9 +385,9 @@ Please see the attached screenshots of successful welcome emails received upon r
 
 ##### Frequent Users
 
-*   As a Frequent user, I want to add, edit and delete as many of my recipes as I want - Testing was performed on the database and its capacity to (1) Store multiple recipes (2) handle recipe that are constantly being edited, updated, and delated, so that the user has confidence that their data wont be lost and the app can handle their demand for manipulating a recipe when that want.
+*   As a Frequent user, I want to add, edit and delete as many of my recipes as I want - Testing was performed on the database and its capacity to (1) Store multiple recipes (2) handle recipe that are constantly being edited, updated, and deleted, so that the user has confidence that their data wont be lost and the app can handle their demand for manipulating a recipe when that want.
 
-*   As a Frequent user, I want to use this app as my only cooking tool - Testing cannot be performed on this parameter as this can be subjective and some users may prefer other simailar apps. If we had the capacity we could use analytics to measure rates of returning users and provide surveys to ask how users rate the app, is there other apps that they like too, etc
+*   As a Frequent user, I want to use this app as my only cooking tool - Testing cannot be performed on this parameter as this can be subjective and some users may prefer other simailar apps. If we had the capacity, we could use analytics to measure rates of returning users and provide surveys to ask how users rate the app, is there other apps that they like too, etc.
 
 *   As a Frequent user, I want to search for new recipes other users have added over time - Continuous testing was performed on the search tool to ensure a user can easily search the recipe list using the search tool.
 
@@ -408,7 +408,7 @@ See the following lighthouse test results:
 **Desktop test result**
 
 
-These test results indicate that the site peforms very well overall. It also shows that the Performance to could be improved a lot for mobile.
+These test results indicate that the site peforms very well overall. It also shows that the Performance could be improved a lot for mobile.
 
 Due to the time constaints of this project it is not feasible to act further on this. In a normal working situation time would be taken to optimise performance.
 
@@ -507,12 +507,12 @@ Images were sourced from google images and permission was granted to use for thi
 
 I'd like to thank my mentor Spencer Barriball for his guidance, efficiency and positivity throughout my project.
 
-I'd like to thank my mentor Daisy McGirr who kindly stepped in to take my final project review as Spencer was on holidays. I am so thankful for her help.
+I'd like to thank mentor Daisy McGirr who kindly stepped in to take my final project review as Spencer was on holidays. I am so thankful for her help.
 
 Thank you to Tim Nelson a Tutor at Code Institute whose teaching techniques helped me understand how to implement Python into a project. A lot of this project's code structing was sourced from Tim's amazing Mini Project and Flash Framework lessons.
 
 Thank you to Matt Rudge the Senior Product Developer at Code Institute for his lessons on implementing EmailJS into a project.
 
-Thanks to my fellow students on Slack for helping various accordian issues I had on the recipe page and with helping get the corect category to display when a user wants to edit a recipe.
+Thanks to Slack user Melinda Zhang for helping various accordian issues I had on the recipe page and with helping get the corect category to display when a user wants to edit a recipe.
 
 Thank you to my tester friends Fionn and Ollie who allowed me to contsantly test my EmailJS functionality with their email addresses.
